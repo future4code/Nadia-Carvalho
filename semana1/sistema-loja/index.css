@@ -1,66 +1,74 @@
 body {
-    background-color: rgb(170, 181, 214);  
+  background-color: rgb(170, 181, 214);
 }
 
 * {
-        font-style: oblique;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        color: gray;
+  font-style: oblique;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: gray;
 }
 
 .centralizador {
-    display: inline-block;
-    text-align: center;
-    width: 100%;
-    padding: 0;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  padding: 0;
 }
+
 .esquerdizador {
-    text-align: left;
-    padding: 10px;
+  text-align: left;
+  padding: 10px;
 }
+
 .home {
-    position: fixed;
-    top: 0;
-    left: 0
+  position: fixed;
+  top: 0;
+  left: 0
 }
+
 .table {
-width: 100%;
+  width: 100%;
 }
+
 h1 {
-padding: 10px;
-text-align: center;
-font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
 }
 
 h2 {
-    position: relative;
-    text-align: center;
-    padding: 5px;
-    color: slategrey !important;
+  position: relative;
+  text-align: center;
+  padding: 5px;
+  color: slategrey !important;
 }
+
 h3 {
-    position: relative;
-    text-align: center;
-    padding: 5px;
-    color: whitesmoke;
+  position: relative;
+  text-align: center;
+  padding: 5px;
+  color: whitesmoke;
 }
+
 a {
-    color: hotpink;
-    display: inline-row;
-    padding: 5px;
-    text-align: center;
-    text-decoration: none;
+  color: hotpink;
+  display: inline-row;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
 }
+
 form {
-    display: inline-block;
-    width: 50%;
-    background-color: white;
-    padding: 15px;
+  display: inline-block;
+  width: 50%;
+  background-color: white;
+  padding: 15px;
 }
+
 table {
-    position: relative;
-    text-align: center;
-    padding: 5px;
-    width: 50%;
-    display: inline-table
+  position: relative;
+  text-align: center;
+  padding: 5px;
+  width: 50%;
+  display: inline-table
 }
