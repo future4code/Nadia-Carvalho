@@ -44,8 +44,13 @@ div>p:first-child {
 }
 
 .botao-amarelo:hover {
-    background-color: #c44f00;
+    background-color: #9e4306;
 }
+
+.botão-amarelo:active {
+  color: white;
+}
+    
 
 .container {
     height: 500px;
@@ -55,7 +60,6 @@ div>p:first-child {
 .icone {
     width: 15px;
 }
-
 
 /** 
   *
