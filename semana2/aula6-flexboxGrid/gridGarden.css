@@ -1,0 +1,119 @@
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20%;
+}
+
+#garden1 #water {
+  grid-column-start: 3;
+}
+
+#garden2 #poison {
+  grid-column-start: 5;
+}
+
+#garden3 #water {
+  grid-column-end: 4;
+}
+
+#garden4 #water {
+  grid-column-end: 2;
+}
+
+#garden5 #water {
+  grid-column-end: -2;
+}
+
+#garden6 #poison {
+  grid-column-start: -3;
+}
+
+#garden7 #water {
+  grid-column-end: span 2;
+}
+
+#garden8 #water {
+  grid-column-end: span 5;;
+}
+
+#garden9 #water {
+  grid-column-start: span 3;
+}
+
+#garden10 #water {
+  grid-column: 4 / 6
+}
+
+#garden11 #water {
+  grid-column: span 3 / 5
+}
+
+#garden12 #water {
+  grid-row-start: 3;
+}
+
+#garden13 #water {
+  grid-row: 3 /6;
+}
+
+#garden14 #water {
+  grid-column: 2;
+  grid-row: 5;
+}
+
+#garden15 water {
+  grid-column: 2 / 6;
+  grid-row: 1 / 6;
+}
+
+#garden16 water {
+  grid-area: 1 / 2 / 4 / 6; 
+}
+
+#garden17 #water-2 {
+  grid-area: 2 / 3 / 5 / 6;
+}
+
+#garden18 #poison {
+  order: 3;
+}
+
+#garden19 #poison {
+  order: -1;
+}
+
+#garden20 {
+  grid-template-columns: 50% 25% 25%;
+}
+
+#garden21 {
+  grid-template-columns: repeat(8, 12.5%);
+}
+
+#garden22 {
+  grid-template-columns: 100px 3em 40%;
+}
+
+#garden23 {
+  grid-template-columns : 1fr 5fr;
+}
+
+#garden24 {
+  grid-template-columns: 50px repeat( 3, 1fr)50px;
+}
+
+#garden25 {
+  grid-template-columns: 75px 3fr 2fr;
+}
+
+#garden26 {
+  grid-template-rows: repeat(4, 12.5px) 1fr;
+}
+
+#garden27 {
+  grid-template: 60% 40% / 200px;
+}
+
+#garden28 {
+  grid-template: 4fr 50px/ 1fr 4fr;
+}
