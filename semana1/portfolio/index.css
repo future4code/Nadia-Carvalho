@@ -1,0 +1,122 @@
+ body {
+   background-color: lightslategray
+ }
+
+ * {
+   font-style: normal;
+   font-family: cursive;
+   color: rgb(192, 62, 62);
+ }
+
+ ul {
+   width: 100%;
+   margin: 15px 20px;
+   padding: 0;
+   line-height: 1;
+ }
+
+ ul li {
+   list-style-type: none;
+ }
+
+ ul li a {
+   padding: 2%;
+   text-transform: uppercase;
+   color: white;
+ }
+
+ header {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+ }
+
+ header ul {
+   text-align: right;
+ }
+
+ main {
+   position: absolute;
+   display: block;
+   top: 20%;
+   bottom: 50%;
+   left: 0;
+   right: 0;
+ }
+
+ footer {
+   position: absolute;
+   top: 90%;
+   bottom: 0;
+   left: 0;
+   right: 0;
+ }
+
+ .centralizador {
+   display: inline-block;
+   text-align: center;
+   width: 100%;
+   padding: 0;
+ }
+
+ .esquerdizador {
+   text-align: left;
+   padding: 10px;
+ }
+
+ .padding {
+   padding: 50px;
+ }
+
+ .umterco {
+   width: 29%;
+   display: inline-block;
+   padding: 2% !important;
+   vertical-align: top;
+ }
+
+ header ul li {
+   display: inline;
+ }
+
+ footer ul li {
+   display: inline;
+ }
+
+ a {
+   background-color: lightslategray;
+ }
+
+ a:hover {
+   background-color: lightsteelblue;
+ }
+
+ h2 {
+   position: relative;
+   text-align: inherit;
+   padding: 5px;
+   color: slateblue;
+ }
+
+ a {
+   color: hotpink;
+   display: inline-row;
+   padding: 5px;
+   text-align: center;
+   text-decoration: none;
+ }
+
+ form {
+   display: inline-block;
+   width: 50%;
+   background-color: white;
+   padding: 15px;
+ }
+
+ p {
+   font: inherit;
+   font-style: italic;
+   text-align: justify;
+ }

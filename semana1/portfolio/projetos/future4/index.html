@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Projeto Seletivo Future4</title>
+  <style>
+    html {
+      height: 100%
+    }
+
+    body {
+      color: white;
+      height: 100%;
+      margin: 0;
+      font-family: Tahoma, Geneva, sans-serif
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    header {
+      background-color: #CF4D00;
+      height: 5%;
+      position: relative;
+    }
+
+    main {
+      background-color: #595F96;
+      height: 75%;
+      text-align: center;
+      position: relative;
+    }
+
+    footer {
+      background-color: #D8D8D8;
+      height: 20%;
+      text-align: center;
+    }
+
+    ul {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 33%;
+      margin: auto;
+      padding: 0;
+      text-align: right;
+      line-height: 1;
+    }
+
+    ul li {
+      display: inline;
+      list-style-type: none;
+    }
+
+    ul li a {
+      padding: 2%;
+      text-transform: uppercase;
+      color: white;
+    }
+
+    h1 {
+      margin: 0;
+      padding: 3%;
+    }
+
+    p {
+      position: absolute;
+      bottom: 0;
+      right: 2%;
+      font-style: italic
+    }
+
+    footer {
+      padding: 3%;
+      vertical-align: middle;
+    }
+
+    input {
+      width: 250px;
+      height: 30px;
+      display: inline-block;
+    }
+
+    button {
+      background-color: #CD4D00;
+      border: none;
+      color: white;
+      padding: 9.5px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      position: relative;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <script> function myFunction() {
+      var email = document.getElementsByTagName("input")[0].value;
+      if (email == "") return false;
+      var message = "O email " + email + " foi enviado"
+      alert(message)
+    }</script>
+  <header>
+    <ul>
+      <li><a href="index.html">Home</a>
+      <li><a href="index.html">Cursos</a>
+      <li><a href="index.html">Contato</a>
+    </ul>
+  </header>
+
+  <main>
+    <h1>Projeto Seletivo Future4</h1>
+    <img src="future4.jpg" alt="Future4" width="50%" height="auto">
+    <p>Turma Web Full Stack</p>
+  </main>
+
+  <footer>
+    <form onsubmit="myFunction()">
+      <input name="email" placeholder="Coloque seu e-mail para contato! :)">
+      <button> Enviar</button>
+    </form>
+  </footer>
+
+</body>
+
+</html>
