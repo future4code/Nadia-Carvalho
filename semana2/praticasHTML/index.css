@@ -2,6 +2,11 @@ body {
   margin: 0.5rem;
 }
 
+ul {
+  list-style-type: none;
+}
+
+}
 header {
 background-color: orange;
 top: 0;
