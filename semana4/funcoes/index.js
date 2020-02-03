@@ -32,10 +32,46 @@ function personalData(name, age, address, isStudent) {
 }
 
 // Exercício 5
-
-/* Exercício 6
-a)
-b)
-c)
-d)
-*/
+function seculo(ano) {
+  if (ano < 1000 || ano > 2020) return ""
+  let seculo = Math.floor(ano / 100)
+  if (ano % 100 > 0) seculo++
+  let romanos = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
+  let sec1 = Math.floor(seculo / 10)
+  let sec2 = seculo % 10
+  let msg = "o ano "+ ano + " pertence ao século "
+  for (let i = 0; i < sec1; i++) {
+    msg += "X"
+  }
+  msg += romanos[sec2]
+  return msg
+}
+// Exercício 6
+//a)
+function arrayLength(array){
+  return array.length
+}
+//b)
+function parImpar (numero){
+return (numero % 2 === 0)
+}
+//c)
+function contaPar(array){
+let totalPar = 0
+for (const itemArray of array) {
+  if (itemArray % 2 === 0) {
+    totalPar++
+  }
+}
+return totalPar
+}
+//d)
+function contaPar2(array){
+  let totalPar = 0
+  for (const itemArray of array) {
+    if (parImpar(itemArray)) {
+      totalPar++
+    }
+  }
+  return totalPar
+  }
