@@ -1,0 +1,32 @@
+body {
+  background-color:#3E92CC;
+  color: #FFFAFF;
+}
+
+h1 {
+  color:#0A2463;
+  margin: 0;
+}
+
+h3 {
+  color: #D8315B;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+main {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 100%;
+  grid-column-gap: 1vw;
+}
+
+section{
+  border-style: dashed;
+  text-align: center;
+  min-height: 80vh;
+}
