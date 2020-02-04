@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="index.js"></script>
+  <link href="index.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <h1>Nadia's planner</h1>
+    <div>
+    <input placeholder="Type in your task" id="CreateTask">
+    <select id="DayOfWeek">
+      <option value="">Select a day</option>
+      <option value="Mon">Monday</option>
+      <option value="Tue">Tuesday</option>
+      <option value="Wed">Wednesday</option>
+      <option value="Thu">Thursday</option>
+      <option value="Fri">Friday</option>
+      <option value="Sat">Saturday</option>
+      <option value="Sun">Sunday</option>
+    </select>
+    <button type="submit" onclick=addTask()>Create task</button>
+  </div>
+  </header>
+  <main>
+  <section>
+    <h3>Monday</h3>
+    <ul id="Mon"></ul>
+  </section>
+  <section>
+    <h3>Tuesday</h3>
+    <ul id="Tue"></ul>
+  </section>
+  <section>
+    <h3>Wednesday</h3>
+    <ul id="Wed"></ul>
+  </section>
+  <section>
+    <h3>Thursday</h3>
+    <ul id="Thu"></ul>
+  </section>
+  <section>
+    <h3>Friday</h3>
+    <ul id="Fri"></ul>
+  </section>
+  <section>
+    <h3>Saturday</h3>
+    <ul id="Sat"></ul>
+  </section>
+  <section>
+    <h3>Sunday</h3>
+    <ul id="Sun"></ul>
+  </section>
+</main>
+</body>
+</html>
