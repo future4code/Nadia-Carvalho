@@ -6,6 +6,14 @@ class Post {
   }
 }
 
+let listPosts = []
+
+function pushListPost(post) {
+  listPosts.push(post);
+  console.log("New Post", post);
+  console.log("New List Post", listPosts);
+}
+
 function newPost() {
 
   const title = document.getElementById("title");
@@ -14,11 +22,15 @@ function newPost() {
 
   if (title.value === "" || author.value === "" || post.value === "") {
     alert("Todos os campos devem ser preenchidos!");
-    return false;
+    return null;
   }
 
   let newPost = new Post(title.value, author.value, post.value);
-  console.log("New Post", newPost);
+  title.value = ""
+  author.value = ""
+  post.value = ""
+
+  pushListPost(newPost);
 
   return newPost;
 
