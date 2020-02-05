@@ -24,10 +24,12 @@ header {
 
 main {
   display: flex;
-  height: 66vh;
-  align-items: flex-start;
+  min-height: 66vh;
+  align-items: center;
   justify-content: center;
-  padding: 5vh;
+  flex-direction: column;
+  padding: 5vh 0;
+  width: 100vw
 }
 
 footer {
@@ -36,6 +38,11 @@ footer {
   height: 12vh;
   align-items: center;
   justify-content: center;
+}
+
+section {
+  max-width: 80vw;
+  width: 400px;
 }
 
 h1 {
@@ -54,7 +61,7 @@ h2 {
   color: #FCAF58;
 }
 
-.new-form h4 {
+.new-form h3 {
   text-align: center;
   margin: 2vh;
 }
@@ -65,11 +72,11 @@ h2 {
   font-size: 1.15rem;
   width: 200px;
   height: 36px;
-  color: white;
+  color: whitesmoke;
 }
 
 .new-form button:hover {
-  background-color: white;
+  background-color: whitesmoke;
   color: #FF8C42;
 }
 
@@ -90,4 +97,20 @@ h2 {
 
 .form-item input {
   height: 36px;
+}
+
+.render-post {
+  color: whitesmoke;
+  border: #F9C784 dashed 2px;
+  padding: 2vh;
+  margin: 2vh 0;
+}
+
+.render-post h3 {
+  color: #FF8C42;
+  font-weight: bolder;  
+} 
+
+.render-post h4 {
+  color: #F9C784;
 }

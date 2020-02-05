@@ -4,6 +4,15 @@ class Post {
     this.author = author;
     this.post = post;
   }
+  render = () => {
+    let content = "";
+    content += "<article class='render-post'>"
+    content += "<h3>" + this.title + "</h3>"
+    content += "<h4> Posted by " + this.author + "</h4>"
+    content += "<p>" + this.post + "</p>"
+    content += "</article>"
+    return content;
+  }
 }
 
 let listPosts = []
@@ -31,7 +40,20 @@ function newPost() {
   post.value = ""
 
   pushListPost(newPost);
+  renderPosts();
 
   return newPost;
+
+}
+
+function renderPosts() {
+  
+  const postList = document.getElementById("post-list");
+  postList.innerHTML = ""
+
+  for (let i = 0; i < listPosts.length; i++) {
+    const post = listPosts[i];
+    postList.innerHTML += post.render()
+  }
 
 }
