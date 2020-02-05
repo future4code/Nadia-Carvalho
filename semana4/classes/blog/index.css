@@ -50,16 +50,16 @@ h2 {
   font-size: 1.25rem;
 }
 
-form { 
+.new-form { 
   color: #FCAF58;
 }
 
-form h4 {
+.new-form h4 {
   text-align: center;
   margin: 2vh;
 }
 
-form button {
+.new-form button {
   background-color: #FF8C42;
   border-radius: 5px;
   font-size: 1.15rem;
@@ -68,7 +68,7 @@ form button {
   color: white;
 }
 
-form button:hover {
+.new-form button:hover {
   background-color: white;
   color: #FF8C42;
 }
