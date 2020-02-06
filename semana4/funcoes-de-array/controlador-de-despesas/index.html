@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="index.js"></script>
+  <link href="index.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <img src="images/foca.png" width="80px">
+    <h1>#FocaNoMilhão</h1>
+    <img src="images/milhão.png" width="50px">
+  </header>
+  <main>
+    <section>
+      <h2>Controlador de Despesas</h2>
+      <h3>Cadastrar despesa</h3>
+      <div class="item">
+        <label>Valor</label>
+        <input type="number" name="value" id="value">
+      </div>
+      <div>
+        <label>Tipo</label>
+        <select name="type" id="type">
+          <option value="">Selecione uma opção</option>
+          <option value="Moradia">Moradia</option>
+          <option value="Diversão">Diversão</option>
+          <option value="Bichos de estimação">Bichos de estimação</option>
+          <option value="Saúde">Saúde</option>
+          <option value="Outros">Outros</option>
+        </select>
+      </div>
+      <div class="item">
+        <label>Descrição</label>
+        <input type="text" name="description" id="description">
+      </div>
+      <button type="submit" onclick="addExpense()">Cadastrar Despesa</button>
+    </section>
+    <section>
+      <h2>Despesas Detalhadas</h2>
+      <div>
+        <label>Tipo</label>
+        <select  name="detail-type" id="detail-type">
+          <option value="">Selecione uma opção</option>
+          <option value="Moradia">Moradia</option>
+          <option value="Diversão">Diversão</option>
+          <option value="Bichos de estimação">Bichos de estimação</option>
+          <option value="Saúde">Saúde</option>
+          <option value="Outros">Outros</option>
+        </select>
+      </div>
+      <div class="item">
+        <label>Valor Mínimo</label>
+        <input type="number"  name="min-value" id="min-value">
+      </div>
+      <div class="item">
+        <label>Valor Máximo</label>
+        <input type="number"  name="max-value" id="max-value">
+      </div>
+      <button type="submit" id="filter" onclick=filter()>Filtrar</button>
+      <button type="submit" id="reset" onclick=reset()>Limpar Filtros</button>
+      <div id="filter-result"></div>
+    </section>
+    <section>
+      <h2>Extrato</h2>
+      <h3>Valor Total:</h3>
+      <div id="result" ></div>
+    </section>
+  </main>
+</body>
+</html>
