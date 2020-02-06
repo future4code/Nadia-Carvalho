@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="index.js"></script>
+  <link href="index.css" type="text/css" rel="stylesheet" />
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+
+<body>
+  <header>
+    <h1>Blog da Future4</h1>
+  </header>
+  <main>
+    <section class="new-form">
+      <h3>Meu novo Post</h3>
+      <div class="form-item">
+        <label for="title">Título</label>
+        <input placeholder="Insira aqui seu título" name="title" id="title">
+      </div>
+      <div class="form-item">
+        <label for="title">Autor</label>
+        <input placeholder="Insira aqui o nome do autor" name="author" id="author">
+      </div>
+      <div class="form-item">
+        <label for="title">Post</label>
+        <textarea placeholder="Insira aqui o texto do seu post" name="post" id="post" rows="8"></textarea>
+      </div>
+      <div class="form-item">
+        <button onclick="newPost()">Enviar Post!</button>
+      </div>
+    </section>
+    <section id="post-list"></section>
+  </main>
+  <footer>
+    <h2>Oi, eu estou no footer!</h2>
+  </footer>
+</body>
+
+</html>
