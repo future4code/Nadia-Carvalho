@@ -1,38 +1,76 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+.Avatar {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.Avatar h3 {
+  padding: 10px;
+}
+
+.Avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.PostImage {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.PostImage img {
+  width: 300px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Post {
+  border: 1px solid grey;
+  margin: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Like {
   display: flex;
-  flex-direction: column;
+  margin: 0 8px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Like img {
+  margin-right: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Comment {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0 10px;
+}
+
+.Comment .hide {
+  display: none;
+}
+
+.Comment .buttons {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: -23px;
+}
+
+.Comment .buttons img {
+  margin-right: 5px;
+}
+
+.Comment .input {
+  width: 250px;
+  position: relative;
+  right: -23px;
 }

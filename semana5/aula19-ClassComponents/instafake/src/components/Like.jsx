@@ -13,7 +13,7 @@ class Like extends React.Component {
     }
   }
 
-  like() {
+  like = () => {
     this.setState({
       liked: true,
       iconLike: SolidS2,
@@ -21,7 +21,7 @@ class Like extends React.Component {
     })
   }
 
-  unlike() {
+  unlike = () => {
     this.setState({
       liked: false,
       iconLike: HollowS2,
@@ -29,7 +29,7 @@ class Like extends React.Component {
     })
   }
 
-  handleClick() {
+  handleClick = () => {
     if (this.state.liked) {
       this.unlike()
     } else {

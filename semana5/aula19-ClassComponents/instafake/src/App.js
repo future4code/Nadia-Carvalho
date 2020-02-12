@@ -1,7 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import PageSection from '../../../aula18-componentes/personalpage/src/components/PageSection';
+import PageSection from './components/PageSection'
+import MeuPost1 from './slices/MeuPost1'
+import MeuPost2 from './slices/MeuPost2'
+import MeuPost3 from './slices/MeuPost3'
 
 function App() {
   return (

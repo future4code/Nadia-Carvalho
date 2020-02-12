@@ -8,23 +8,54 @@ class Comment extends React.Component {
     this.state = {
       counter: props.counter | 0,
       commenting: false,
+      comment: ""
     }
   }
-  addComment() {
+
+  addComment = () => {
     this.setState({
-      commenting: true
+      commenting: true,
+      comment: ""
     })
   }
 
-  saveComment(){
+  saveComment = () => {
     this.setState({
-      counter: this.state.counter
+      counter: this.state.counter + 1,
+      commenting: false,
+      comment: ""
     })
   }
 
+  handleChange = (event) => {
+    this.setState({
+      comment: event.target.value
+    })
+  }
 
-
-
-
+  render() {
+    let inputClass = "input"
+    if (!this.state.commenting) {
+      inputClass = "input hide"
+    }
+    return (
+      <div className="Comment"> 
+        <div className="buttons">
+          <img src={AddComent} onClick={this.addComment} />
+          <span>{this.state.counter}</span>
+        </div>
+        <div className={inputClass}>
+          <input type="text" placeholder="Escreva seu comentário" value={this.state.comment} onChange={this.handleChange} />
+          <button onClick={this.saveComment}>Comentar</button>
+        </div>
+      </div>
+    )
+  }
 
 }
+
+Comment.propTypes = {
+  counter: PropTypes.number.isRequired
+}
+
+export default Comment
