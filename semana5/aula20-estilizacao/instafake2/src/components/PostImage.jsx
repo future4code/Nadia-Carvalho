@@ -1,5 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const ImageContainer = styled.div`
+  text-align: center;
+`
+const Image = styled.img`
+  width: 300px;
+` 
 
 class PostImage extends React.Component {
   constructor(props) {
@@ -7,9 +15,9 @@ class PostImage extends React.Component {
   }
   render() {
     return (
-      <div className="PostImage">
-        <img src={this.props.image} />
-      </div>
+      <ImageContainer>
+        <Image src={this.props.image} />
+      </ImageContainer>
     )
   }
 }

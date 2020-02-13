@@ -30,8 +30,14 @@ class App extends React.Component {
     }
   }
 
-  onAddPost(post) {
-    //vai adionar o novo post ao  state
+  onAddPost = (post) => {
+    const newPost = {
+      avatar: { name: post.user, avatar: post.avatar},
+      image: post.image
+    }
+    this.setState({
+      postList: [...this.state.postList, newPost]
+    })
   }
 
   render() {
@@ -48,7 +54,7 @@ class App extends React.Component {
       )
     })
 
-    if (content.length == 0) {
+    if (content.length === 0) {
       content = <EmptyList>Nenhum post no momento!</EmptyList>
     }
 

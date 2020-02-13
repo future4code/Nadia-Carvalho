@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
 #root {
@@ -23,14 +23,6 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-}
-
-.PostImage {
-  text-align: center;
-}
-
-.PostImage img {
-  width: 300px;
 }
 
 .Post {
