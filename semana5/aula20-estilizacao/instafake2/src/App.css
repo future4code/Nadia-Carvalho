@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+.Avatar {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.Avatar h3 {
+  padding: 10px;
+}
+
+.Avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.PostImage {
+  text-align: center;
+}
+
+.PostImage img {
+  width: 300px;
+}
+
+.Post {
+  border: 1px solid grey;
+  margin: 20px;
+}
+
+.Like {
+  display: flex;
+  margin: 0 8px;
+  align-items: center;
+}
+
+.Like img {
+  margin-right: 5px;
+}
+
+.Comment {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0 10px;
+}
+
+.Comment .hide {
+  display: none;
+}
+
+.Comment .buttons {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: -23px;
+}
+
+.Comment .buttons img {
+  margin-right: 5px;
+}
+
+.Comment .input {
+  width: 240px;
+  position: relative;
+  right: -23px;
+}
+
+.Comment .input input {
+  width: 65%;
+}
