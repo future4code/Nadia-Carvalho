@@ -33,15 +33,6 @@ const Button = styled.button`
   padding: 0.25em 1em;
 `
 
-function validURL(str) {
-  var pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
-    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
-    '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
-    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
-    '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
-    '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
-  return !!pattern.test(str);
-}
 
 class AddPost extends React.Component {
   constructor(props) {
@@ -54,7 +45,7 @@ class AddPost extends React.Component {
   }
 
   save = () => {
-    if (this.state.addUser === "" || !validURL(this.state.addAvatar) || !validURL(this.state.addPic)) {
+    if (this.state.addUser === "" || this.state.addAvatar === "" || this.state.addPic === "" ) {
       alert("Dados inválidos! Tente novamente.")
       return
     }
