@@ -7,34 +7,20 @@ import Form from '../components/Form'
 import InputContainer from '../components/InputContainer'
 
 const Message = styled.p`
-  
+  width: 300px;
+  max-width: 60vw;
+  text-align: center;
 ` 
 
-class FormThree extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-
-    }
-  }
-  validate = () => {
-
-  }
-  save = () => {
-  }
+class FormDone extends React.Component {
   render() {
     const header = "O formulário acabou"
     return (
       <Form header={header}>
-        <Message>Muito obrigado por participar! Entraremos em contato!</Message>
+        <Message>Muito obrigado por participar!<br/>Entraremos em contato!</Message>
       </Form>
     )
   }
 }
 
-FormThree.propTypes = {
-  onSave: propTypes.func.isRequired,
-  changeStep: propTypes.func
-}
-
-export default FormThree
+export default FormDone

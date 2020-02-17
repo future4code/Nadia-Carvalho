@@ -1,17 +1,29 @@
 import React from 'react';
 import './App.css';
 import styled from 'styled-components'
-import FormOne from './steps/FormOne';
+import FormOne, { Ensino } from './steps/FormOne';
 import FormTwo from './steps/FormTwo';
 import FormThree from './steps/FormThree';
 import FormDone from './steps/FormDone';
 
 const Box = styled.div`
   border: 1px solid black;
-  min-height: 100vh;
+  min-height: 90vh;
   width: 400px;
   max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: flex-start;
+  margin: 0 auto;
 `;
+
+const Step = {
+  PersonalInfo: 1,
+  CollegeInfo: 2,
+  EducationalInfo: 3,
+  Done: 4
+}
 
 class App extends React.Component {
   constructor(props) {
@@ -20,23 +32,34 @@ class App extends React.Component {
       formOne: {},
       formTwo: {},
       formThree: {},
-      currentStep: 0
+      currentStep: Step.PersonalInfo
     }
   }
 
   onSave = (data) => {
-    switch (this.state.currentStep) {
-      case 0:
-        this.setState({ formOne: data })
+    let nextStep
+    let { currentStep } = this.state
+    switch (currentStep) {
+      case Step.PersonalInfo:
+          this.setState({ formOne: data })
+          nextStep = 
+            Number(data.education) === Ensino.SuperiorIncompleto ||
+            Number(data.education) === Ensino.SuperiorCompleto
+              ? Step.CollegeInfo : Step.EducationalInfo 
         break;
-      case 1:
-        this.setState({ formTwo: data })
+      case Step.CollegeInfo:
+          this.setState({ formTwo: data })
+          nextStep = Step.Done
         break;
-      case 2:
-        this.setState({ formThree: data })
+      case Step.EducationalInfo:
+          this.setState({ formThree: data })
+          nextStep = Step.Done
+        break;
+      default:
+          nextStep = this.state.currentStep + 1
         break;
     }
-    this.changeStep(this.state.currentStep + 1)
+    this.changeStep(nextStep)
   }
   
   changeStep = (step) => {
@@ -46,14 +69,15 @@ class App extends React.Component {
   render() {
     let StepForm
     switch (this.state.currentStep) {
-      case 0:
+      case Step.PersonalInfo:
         StepForm = FormOne
         break;
-      case 1:
+      case Step.CollegeInfo:
         StepForm = FormTwo
         break;
-      case 2:
+      case Step.EducationalInfo:
         StepForm = FormThree
+        break;
       default:
         StepForm = FormDone
         break;

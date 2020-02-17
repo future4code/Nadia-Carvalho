@@ -5,7 +5,10 @@ import propTypes from 'prop-types'
 const Btn = styled.button`
   border-radius: 10px;
   color: white;
-  background-color: darkgray;
+  background-color: black;
+  text-align: center;
+  width: 120px;
+  height: 32px;
 `
 
 class Button extends React.Component {

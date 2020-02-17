@@ -6,6 +6,7 @@ const Inpt = styled.input`
   border-radius: 5px;
   color: darkgrey;
   font-size: 0.95rem;
+  margin: 5px 0;
 `
 
 class Input extends React.Component {
@@ -13,9 +14,9 @@ class Input extends React.Component {
     super(props)
   }
   render() {
-    const type = this.props.type | "text"
+    const type = this.props.type ? this.props.type : "text"
     return (
-      <Inpt type={type} value={this.props.value} onChange={this.props.onChange}>{this.props.children}</Inpt>
+      <Inpt type={type} {...this.props}>{this.props.children}</Inpt>
     )
   }
 }

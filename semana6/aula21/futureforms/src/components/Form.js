@@ -19,7 +19,7 @@ class Form extends React.Component {
   }
   render() {
     return (
-      <FormContainer onSubmit={e => { e.preventDefault(); }}>
+      <FormContainer>
         <Header>{this.props.header}</Header>
         {this.props.children}
       </FormContainer>

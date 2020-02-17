@@ -3,8 +3,16 @@ import styled from 'styled-components'
 import propTypes from 'prop-types'
 import Button from '../components/Button'
 import Input from '../components/Input'
+import Select from '../components/Select'
 import Form from '../components/Form'
 import InputContainer from '../components/InputContainer'
+
+export const Ensino = {
+  MedioIncompleto: 1,
+  MedioCompleto: 2,
+  SuperiorIncompleto: 3,
+  SuperiorCompleto: 4,
+}
 
 class FormOne extends React.Component {
   constructor(props) {
@@ -19,7 +27,7 @@ class FormOne extends React.Component {
   validate = () => {
     return (
       this.state.name !== "" &&
-      this.state.age !== "" && Number(this.state.age) > 0 &&
+      this.state.age !== "" && parseInt(this.state.age) > 0 &&
       this.state.email !== "" &&
       this.state.education !== ""
     )
@@ -33,21 +41,46 @@ class FormOne extends React.Component {
   }
   render() {
     const header = "Etapa 1 - Dados Gerais"
+    const educationOptions = [
+      {value: "", label: "Selecione"},
+      {value: Ensino.MedioIncompleto, label: "Ensino Médio Incompleto"},
+      {value: Ensino.MedioCompleto, label: "Ensino Médio Completo"},
+      {value: Ensino.SuperiorIncompleto, label: "Ensino Superior Incompleto"},
+      {value: Ensino.SuperiorCompleto, label: "Ensino Superior Completo"},
+    ]
     return (
       <Form header={header}>
-        <InputContainer label="Qual seu nome?">
-          <Input name="name" value={this.state.name} onChange={(e) => { this.setState({ name: e.target.value }) }}/>
+        <InputContainer label="1. Qual seu nome?">
+          <Input 
+            name="name" 
+            value={this.state.name} 
+            onChange={(e) => { this.setState({ name: e.target.value }) }}
+          />
         </InputContainer>
-        <InputContainer label="Qual sua idade?">
-          <Input name="age" value={this.state.age} onChange={(e) => { this.setState({ age: e.target.value }) }}/>
+        <InputContainer label="2. Qual sua idade?">
+          <Input 
+            name="age"
+            type="number" 
+            value={this.state.age} 
+            onChange={(e) => { this.setState({ age: e.target.value }) }}
+          />
         </InputContainer>
-        <InputContainer label="Qual seu email?">
-          <Input name="email" value={this.state.email} onChange={(e) => { this.setState({ email: e.target.value }) }}/>
+        <InputContainer label="3. Qual seu email?">
+          <Input 
+            name="email" 
+            value={this.state.email} 
+            onChange={(e) => { this.setState({ email: e.target.value }) }}
+          />
         </InputContainer>
-        <InputContainer label="Qual a sua escolaridade?">
-          <Input name="email" value={this.state.education} onChange={(e) => { this.setState({ education: e.target.value }) }}/>
+        <InputContainer label="4. Qual a sua escolaridade?">
+          <Select 
+            name="education" 
+            value={this.state.education} 
+            onChange={(e) => { this.setState({ education: e.target.value }) }}
+            optionList={educationOptions}
+          />
         </InputContainer>
-        <InputContainer>
+        <InputContainer center>
           <Button onClick={this.save}>Próxima Etapa</Button>
         </InputContainer>
       </Form>
