@@ -1,0 +1,10 @@
+* {
+  padding-inline-start: 0;
+}
+
+#root {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  height: 100vh;
+}
