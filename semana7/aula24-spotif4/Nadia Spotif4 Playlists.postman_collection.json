@@ -1,0 +1,877 @@
+{
+	"info": {
+		"_postman_id": "b3c56fa6-5969-44ed-9219-98efc931aabf",
+		"name": "Nadia Spotif4 Playlists",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Exercícios",
+			"item": [
+				{
+					"name": "01",
+					"item": [
+						{
+							"name": "createPlaylistx01",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "auth",
+										"value": "string",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Nadia Playlist x01\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/playlists/createPlaylist",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"createPlaylist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createPlaylistx02",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "string"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Nadia Playlist x02\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/playlists/createPlaylist",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"createPlaylist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createPlaylistx03",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "string"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Nadia Playlist x03\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/playlists/createPlaylist",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"createPlaylist"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Exercício 1",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "02",
+					"item": [
+						{
+							"name": "getAllPlaylists",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth",
+										"value": "string",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/playlists/getAllPlaylists",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"getAllPlaylists"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Exercício 2",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "03",
+					"item": [
+						{
+							"name": "addMusic11ToPlaylistx01",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "string"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"playlistId\": \"ba9a88be-e85b-4eaf-9085-0c02d18c9d26\",\n\t\"music\": {\n\t\t\"name\": \"Awesome Music 11\",\n\t\t\"artist\": \"Awesome4\",\n\t\t\"url\": \"http://spoti4.future4.com.br/11.mp3\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/playlists/addMusicToPlaylist",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"addMusicToPlaylist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addMusic12ToPlaylistx01",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "string"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"playlistId\": \"ba9a88be-e85b-4eaf-9085-0c02d18c9d26\",\n\t\"music\": {\n\t\t\"name\": \"Awesome Music 12\",\n\t\t\"artist\": \"Awesome4\",\n\t\t\"url\": \"http://spoti4.future4.com.br/12.mp3\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/playlists/addMusicToPlaylist",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"addMusicToPlaylist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addMusic21ToPlaylistx02",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "string"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"playlistId\": \"91a67b0c-b7a1-4486-a3ea-070290647458\",\n\t\"music\": {\n\t\t\"name\": \"Awesome Music 21\",\n\t\t\"artist\": \"Awesome4\",\n\t\t\"url\": \"http://spoti4.future4.com.br/21.mp3\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/playlists/addMusicToPlaylist",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"addMusicToPlaylist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addMusic22ToPlaylistx02",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "string"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"playlistId\": \"91a67b0c-b7a1-4486-a3ea-070290647458\",\n\t\"music\": {\n\t\t\"name\": \"Awesome Music 22\",\n\t\t\"artist\": \"Awesome4\",\n\t\t\"url\": \"http://spoti4.future4.com.br/22.mp3\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/playlists/addMusicToPlaylist",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"addMusicToPlaylist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addMusic31ToPlaylistx03",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "string"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"playlistId\": \"55f0eec2-62f8-4ae7-b789-8cb242a5b8d9\",\n\t\"music\": {\n\t\t\"name\": \"Awesome Music 31\",\n\t\t\"artist\": \"Awesome4\",\n\t\t\"url\": \"http://spoti4.future4.com.br/31.mp3\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/playlists/addMusicToPlaylist",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"addMusicToPlaylist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addMusic32ToPlaylistx03",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "string"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"playlistId\": \"55f0eec2-62f8-4ae7-b789-8cb242a5b8d9\",\n\t\"music\": {\n\t\t\"name\": \"Awesome Music 32\",\n\t\t\"artist\": \"Awesome4\",\n\t\t\"url\": \"http://spoti4.future4.com.br/32.mp3\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/playlists/addMusicToPlaylist",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"addMusicToPlaylist"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Exercício 3",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "04",
+					"item": [
+						{
+							"name": "MusicPlaylistx01",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth",
+										"value": "string",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/playlists/getPlaylistMusics/ba9a88be-e85b-4eaf-9085-0c02d18c9d26",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"getPlaylistMusics",
+										"ba9a88be-e85b-4eaf-9085-0c02d18c9d26"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "MusicPlaylistx02",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "string"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/playlists/getPlaylistMusics/91a67b0c-b7a1-4486-a3ea-070290647458",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"getPlaylistMusics",
+										"91a67b0c-b7a1-4486-a3ea-070290647458"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "MusicPlaylistx03",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "string"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/playlists/getPlaylistMusics/55f0eec2-62f8-4ae7-b789-8cb242a5b8d9",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"getPlaylistMusics",
+										"55f0eec2-62f8-4ae7-b789-8cb242a5b8d9"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Exercício 4",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "05",
+					"item": [
+						{
+							"name": "searchPlaylistx01",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "string"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/playlists/searchPlaylist?playlistName=x01",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"searchPlaylist"
+									],
+									"query": [
+										{
+											"key": "playlistName",
+											"value": "x01"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addMusic13ToPlaylistx01",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "string"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"playlistId\": \"ba9a88be-e85b-4eaf-9085-0c02d18c9d26\",\n\t\"music\": {\n\t\t\"name\": \"Awesome Music 13\",\n\t\t\"artist\": \"Awesome4\",\n\t\t\"url\": \"http://spoti4.future4.com.br/13.mp3\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/playlists/addMusicToPlaylist",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"addMusicToPlaylist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addMusic14ToPlaylistx01",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "string"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"playlistId\": \"ba9a88be-e85b-4eaf-9085-0c02d18c9d26\",\n\t\"music\": {\n\t\t\"name\": \"Awesome Music 14\",\n\t\t\"artist\": \"Awesome4\",\n\t\t\"url\": \"http://spoti4.future4.com.br/14.mp3\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/playlists/addMusicToPlaylist",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"addMusicToPlaylist"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Exeercício 5",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "06",
+					"item": [
+						{
+							"name": "MusicPlaylistx01",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth",
+										"value": "string",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/playlists/getPlaylistMusics/ba9a88be-e85b-4eaf-9085-0c02d18c9d26",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"getPlaylistMusics",
+										"ba9a88be-e85b-4eaf-9085-0c02d18c9d26"
+									]
+								},
+								"description": "### Descrição:\nEsta requisição permite verificar quais músicas estão em uma determinada playlist\n\n### Input:\n**Headers**\n<br/>`auth`: token de autenticação\n```\n\tauth: \"string\" \n```\n\n**Path Param**\n<br/>`playlistId`: id da playlist (obrigatório)\n\n### Output:\n**Body**\n<br/> `quantity`: quantidade de músicas da playlist\n<br/> `musics`: array com as informações das músicas\n<br/> `id`: id de cada música\n<br/> `name`: nome de cada música\n<br/> `artist`: cantor ou band da música\n<br/>`url`: URL da música para ser tocada\n```\n{\n    \"result\": {\n        \"quantity\": \"number\",\n        \"musics\": [ \n            {\n                \"id\": \"string\", \n                \"name\": \"string\", \n                \"artist\": \"string\",\n                \"url\": \"string\"\n            }\n        ]\n    }\n}\n```\n\n"
+							},
+							"response": []
+						}
+					],
+					"description": "Exercício 6",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "07",
+					"item": [
+						{
+							"name": "addMusic23ToPlaylistx02",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "string"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"playlistId\": \"91a67b0c-b7a1-4486-a3ea-070290647458\",\n\t\"music\": {\n\t\t\"name\": \"Awesome Music 23\",\n\t\t\"artist\": \"Awesome4\",\n\t\t\"url\": \"http://spoti4.future4.com.br/22.mp3\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/playlists/addMusicToPlaylist",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"addMusicToPlaylist"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Exercício 7",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "08",
+					"item": [
+						{
+							"name": "MusicPlaylistx02",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "string"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/playlists/getPlaylistMusics/91a67b0c-b7a1-4486-a3ea-070290647458",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"getPlaylistMusics",
+										"91a67b0c-b7a1-4486-a3ea-070290647458"
+									]
+								},
+								"description": "### Descrição:\nEsta requisição permite verificar quais músicas estão em uma determinada playlist\n\n### Input:\n**Headers**\n<br/>`auth`: token de autenticação\n```\n\tauth: \"string\" \n```\n\n**Path Param**\n<br/>`playlistId`: id da playlist (obrigatório)\n\n### Output:\n**Body**\n<br/> `quantity`: quantidade de músicas da playlist\n<br/> `musics`: array com as informações das músicas\n<br/> `id`: id de cada música\n<br/> `name`: nome de cada música\n<br/> `artist`: cantor ou band da música\n<br/>`url`: URL da música para ser tocada\n```\n{\n    \"result\": {\n        \"quantity\": \"number\",\n        \"musics\": [ \n            {\n                \"id\": \"string\", \n                \"name\": \"string\", \n                \"artist\": \"string\",\n                \"url\": \"string\"\n            }\n        ]\n    }\n}\n```\n\n"
+							},
+							"response": []
+						}
+					],
+					"description": "Exercício 8",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "09",
+					"item": [
+						{
+							"name": "addMusic24ToPlaylistx02",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "string"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"playlistId\": \"91a67b0c-b7a1-4486-a3ea-070290647458\",\n\t\"music\": {\n\t\t\"name\": \"Awesome Music 24\",\n\t\t\"artist\": \"Awesome4\",\n\t\t\"url\": \"http://spoti4.future4.com.br/24.mp3\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/playlists/addMusicToPlaylist",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"addMusicToPlaylist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addMusic25ToPlaylistx02",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "string"
+									},
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"playlistId\": \"91a67b0c-b7a1-4486-a3ea-070290647458\",\n\t\"music\": {\n\t\t\"name\": \"Awesome Music 25\",\n\t\t\"artist\": \"Awesome4\",\n\t\t\"url\": \"http://spoti4.future4.com.br/25.mp3\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/playlists/addMusicToPlaylist",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"addMusicToPlaylist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "removeMusicFromPlaylist",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "string"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/playlists/removeMusicFromPlaylist?playlistId=91a67b0c-b7a1-4486-a3ea-070290647458&musicId=b4b20ce9-0be6-4946-850a-dd5763e1d038",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"removeMusicFromPlaylist"
+									],
+									"query": [
+										{
+											"key": "playlistId",
+											"value": "91a67b0c-b7a1-4486-a3ea-070290647458"
+										},
+										{
+											"key": "musicId",
+											"value": "b4b20ce9-0be6-4946-850a-dd5763e1d038"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Exercício 9",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "10",
+					"item": [
+						{
+							"name": "MusicPlaylistx02",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth",
+										"type": "text",
+										"value": "string"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/playlists/getPlaylistMusics/91a67b0c-b7a1-4486-a3ea-070290647458",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"playlists",
+										"getPlaylistMusics",
+										"91a67b0c-b7a1-4486-a3ea-070290647458"
+									]
+								},
+								"description": "### Descrição:\nEsta requisição permite verificar quais músicas estão em uma determinada playlist\n\n### Input:\n**Headers**\n<br/>`auth`: token de autenticação\n```\n\tauth: \"string\" \n```\n\n**Path Param**\n<br/>`playlistId`: id da playlist (obrigatório)\n\n### Output:\n**Body**\n<br/> `quantity`: quantidade de músicas da playlist\n<br/> `musics`: array com as informações das músicas\n<br/> `id`: id de cada música\n<br/> `name`: nome de cada música\n<br/> `artist`: cantor ou band da música\n<br/>`url`: URL da música para ser tocada\n```\n{\n    \"result\": {\n        \"quantity\": \"number\",\n        \"musics\": [ \n            {\n                \"id\": \"string\", \n                \"name\": \"string\", \n                \"artist\": \"string\",\n                \"url\": \"string\"\n            }\n        ]\n    }\n}\n```\n\n"
+							},
+							"response": []
+						}
+					],
+					"description": "Exercício 10",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "deletePlaylist",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "auth",
+								"type": "text",
+								"value": "string"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/playlists/deletePlaylist?playlistId=string",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"playlists",
+								"deletePlaylist"
+							],
+							"query": [
+								{
+									"key": "playlistId",
+									"value": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "## Descrição\n</br>Esta API serve para fazer uma pequena playlist, podendo editar, criar, deletar e mais.\n```\n\tFeito pela Future4. Todos os direitos reservados\n```\n\n## Instruções gerais.\n\n**URL Base**\nUtilize este link como URL base da API.\n\n\n`https://us-central1-spotif4.cloudfunctions.net/api`\n\n**Autenticação**\n\nToda requisição deve ter um token de autenticação específico. Ele deve ser enviado nos headers, da seguinte forma: \n\n\n\n`auth: \"string\"`",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c8f0d16e-921b-46cf-aa54-b01aacf99949",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3e0dbe26-918c-4d3a-a9c8-e9694847e91f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "9f8f1c1d-8f23-4fc9-81a7-d5af4f1e14ea",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "79d0f44a-a683-4f96-a81a-217b9522a812",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
