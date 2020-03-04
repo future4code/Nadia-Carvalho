@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import styled from 'styled-components'
 import CriarUsuario from './components/CriarUsuario'
 import ListaDeUsuarios from './components/ListaDeUsuarios'
@@ -16,7 +15,6 @@ class App extends React.Component {
     this.state = {
       proximaTela: "lista"
     }
-
   }
 
   trocarDePagina = () => {
@@ -25,15 +23,15 @@ class App extends React.Component {
     } else {
       this.setState({ proximaTela: "cadastro" })
     }
-
   }
+
   render() {
     return (
       <div>
         <button onClick={this.trocarDePagina}>Ir para {this.state.proximaTela}</button>
-      <Container>
-        {this.state.proximaTela !== "cadastro" ? (<CriarUsuario />) : (<ListaDeUsuarios />)}
-      </Container>
+        <Container>
+          {this.state.proximaTela !== "cadastro" ? (<CriarUsuario />) : (<ListaDeUsuarios />)}
+        </Container>
       </div>
     )
   }
