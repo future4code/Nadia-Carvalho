@@ -4,7 +4,10 @@ import Input from '@material-ui/core/Input';
 function Task(props) {
   return (
     <div>
-      <Input placeholder="Insira a tarefa" inputProps={{ 'aria-label': 'Nova Tarefa' }} />
+      <Input 
+        placeholder="Insira a tarefa" 
+        inputProps={{ 'aria-label': 'Nova Tarefa' }} 
+      />
     </div>
   );
 }

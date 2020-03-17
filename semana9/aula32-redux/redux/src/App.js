@@ -1,17 +1,26 @@
 import React from 'react';
-import Task from './components/Input.js'
-import Lista from './components/List'
+import Task from './containers/Input.js'
+import Lista from './containers/List'
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
 
 
 
 function App() {
   return (
-    <div>
-      <h2>Future4Tasks</h2>
-      <Task />
-      <Lista />
-      
-    </div>
+    <Container maxWidth="sm">
+      <Grid 
+        container
+        direction="column"
+        justify="center"
+        alignItems="center"  
+      >
+        <Typography variant="h3" align="center">Future4Tasks</Typography>
+        <Task />
+        <Lista />
+      </Grid>
+    </Container>
   );
 }
 
