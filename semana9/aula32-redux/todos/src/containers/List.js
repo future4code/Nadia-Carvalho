@@ -44,7 +44,15 @@ function Lista(props) {
 
 const mapStateToProps = (state) => {
   return {
-    lista: state.todos.taskList
+    lista: state.todos.taskList.filter(task => {
+      switch (state.todos.filter) {
+        case 'pendent':
+          return !task.completed
+        case 'completed':
+          return task.completed
+        default:
+          return true
+    }})
   }
 }
 const mapDispatchtoProps = (dispatch) => {

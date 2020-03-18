@@ -1,6 +1,6 @@
 const initialState = {
   taskList: [],
-  filter: null,
+  filter: 'all',
 };
 
 const taskReducer = (state = initialState, action) => {

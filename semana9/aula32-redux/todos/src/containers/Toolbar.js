@@ -7,6 +7,9 @@ import { filtrarTarefa, completarTodas, removerCompletas } from '../actions/inde
 
 
 function Toolbar(props) {
+  const colorButton = (filter) => {
+    return props.filter === filter ? 'primary' : 'secondary'
+  }
   return (
       <Grid 
         container
@@ -28,21 +31,21 @@ function Toolbar(props) {
           alignItems="center"
         >
           <Button 
-            variant="contained" color="secondary" size="small"
+            variant="contained" color={colorButton('all')} size="small"
             style={{margin: '5px'}}
             onClick={() => props.filtraTarefa('all') }
           >
             Todas
           </Button>
           <Button 
-            variant="contained" color="secondary" size="small"
+            variant="contained" color={colorButton('pendent')} size="small"
             style={{margin: '5px'}}
             onClick={() => props.filtraTarefa('pendent') }
           >
             Pendentes
           </Button>
           <Button 
-            variant="contained" color="primary" size="small"
+            variant="contained" color={colorButton('completed')} size="small"
             style={{margin: '5px'}}
             onClick={() => props.filtraTarefa('completed') }
           >
