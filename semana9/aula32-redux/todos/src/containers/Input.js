@@ -11,15 +11,15 @@ class Task extends React.Component {
     }
   }
   onChangeInput = (e) => {
-    this.setState({inputText: e.target.value})
+    this.setState({ inputText: e.target.value })
   }
 
   onEnterPress = (e) => {
-  if(e.keyCode === 13 && this.state.inputText){
-    this.props.addTask(this.state.inputText)
-    this.setState({inputText:''})
-  }
-    
+    if (e.keyCode === 13 && this.state.inputText) {
+      this.props.addTask(this.state.inputText)
+      this.setState({ inputText: '' })
+    }
+
   }
   render() {
     return (
@@ -37,17 +37,11 @@ class Task extends React.Component {
 
 }
 
-const mapStatetoProps = (state) => {
-  return {
-
-  }
-}
-
 const mapDispatchtoProps = (dispatch) => {
   return {
     addTask: text => dispatch(criarTarefa(text))
   }
 }
 
-export default connect(mapStatetoProps, mapDispatchtoProps)(Task);
+export default connect(null, mapDispatchtoProps)(Task);
 

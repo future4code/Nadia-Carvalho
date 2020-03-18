@@ -40,8 +40,8 @@ export const removerTarefa = (task) => {
   }
 }
 
-export const removerTodas = () => {
+export const removerCompletas = () => {
   return {
-    type: 'REMOVER_TODAS',
+    type: 'REMOVER_COMPLETAS',
   }
 }

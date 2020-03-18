@@ -10,14 +10,14 @@ import Toolbar from './containers/Toolbar'
 
 function App() {
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="xs">
       <Grid 
         container
         direction="column"
         justify="center"
         alignItems="center"  
       >
-        <Typography variant="h3" align="center">4Task</Typography>
+        <Typography variant="h1" align="center">4Task</Typography>
         <Task />
         <Lista />
         <Toolbar />

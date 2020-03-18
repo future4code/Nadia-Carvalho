@@ -38,8 +38,12 @@ const taskReducer = (state = initialState, action) => {
       })
       return { ...state, taskList: taskList };
 
-    case "REMOVER_TODAS":
-      return { ...state, taskList: initialState.taskList };
+    case "REMOVER_COMPLETAS":
+      taskList = state.taskList.filter((task) => {
+        return !task.completed
+      })
+      return { ...state, taskList: taskList };
+      
     default:
       return state;
   }
