@@ -24,3 +24,8 @@ export const retrievedMatches = () => async(dispatch) => {
   const response = await axios.get(baseUrl + 'matches')
   dispatch(setMatches(response.data.matches))
 }
+
+export const clearSwipes = () => async (dispatch) => {
+  await axios.put('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/nadia/clear')
+  dispatch(setMatches(null))
+}

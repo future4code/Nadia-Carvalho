@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import {connect} from 'react-redux'
-import {clearSwipes} from '../../actions/profiles'
+import {clearSwipes} from '../../middlewares/thunk'
 import styled from 'styled-components'
 
 const ClearButton = styled.button`
