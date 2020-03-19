@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 import { mdiAccountMultipleCheck } from '@mdi/js'
 import { swipeLeft, swipeRight } from '../../components/UserSwipeCard/styled'
 import { updateCurrentPage } from '../../actions/route'
-import { getProfileToSwipe } from '../../middlewares/thunk'
+import { getProfileToSwipe, profileChoice } from '../../middlewares/thunk'
 import { Loader } from '../../components/Loader'
 
 export class SwipeScreen extends Component {
@@ -83,14 +83,14 @@ SwipeScreen.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-  profileToSwipe: state.profiles.profileToSwipe
+  profileToSwipe: state.profiles.profileToSwipe,
 })
 
 const mapDispatchToProps = (dispatch) => {
   return {
     goToMatchScreen: () => dispatch(updateCurrentPage('MatchScreen')),
     getProfileToSwipe: () => dispatch(getProfileToSwipe()),
-    chooseProfile: () => dispatch(),
+    chooseProfile: (id, option) => dispatch(profileChoice(id, option)),
   }
 }
 
