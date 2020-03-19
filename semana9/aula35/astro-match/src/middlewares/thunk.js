@@ -15,5 +15,6 @@ export const profileChoice = (id, option) => async (dispatch) => {
     "choice": option
   }
   await axios.post(baseUrl + 'choose-person', data)
+  dispatch(setProfileToSwipe(null))
   dispatch(getProfileToSwipe())
 }
