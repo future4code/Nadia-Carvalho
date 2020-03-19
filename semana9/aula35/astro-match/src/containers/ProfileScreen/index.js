@@ -12,7 +12,7 @@ class ProfileScreen extends React.Component {
 }
 
 ProfileScreen.propTypes = {
-
+  profile: PropTypes.object
 }
 
 const mapStateToProps = (state) => ({

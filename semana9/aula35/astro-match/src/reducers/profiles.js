@@ -1,7 +1,15 @@
-const initialState = {}
+const initialState = {
+  profileToSwipe: null,
+  matches: []
+}
 
 const profiles = (state = initialState, action) => {
-  return state
+  switch (action.type) {
+    case 'SET_PROFILE_TO_SWIPE':
+      return { ...state, profileToSwipe: action.payload.profile }
+    default:
+      return state
+  }
 }
 
 export default profiles
