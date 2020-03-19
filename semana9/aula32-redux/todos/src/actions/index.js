@@ -16,11 +16,11 @@ export const filtrarTarefa = (filter) => {
   }
 }
 
-export const completarTarefa = (task) => {
+export const alternaTarefa = (task) => {
   return {
-    type: 'COMPLETAR_TAREFA',
+    type: 'TOGGLE_TAREFA',
     payload: {
-      task: task
+      id: task
     }
   }
 }
@@ -28,8 +28,6 @@ export const completarTarefa = (task) => {
 export const completarTodas = () => {
   return {
     type: 'COMPLETAR_TODAS',
-    payload: {
-    }
   }
 }
 
@@ -37,15 +35,13 @@ export const removerTarefa = (task) => {
   return {
     type: 'REMOVER_TAREFA',
     payload: {
-      task: task
+      id: task
     }
   }
 }
 
-export const removerTodas = () => {
+export const removerCompletas = () => {
   return {
-    type: 'REMOVER_TODAS',
-    payload: {
-    }
+    type: 'REMOVER_COMPLETAS',
   }
 }
