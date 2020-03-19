@@ -1,6 +1,7 @@
 import axios from 'axios'
 import {
-  setProfileToSwipe
+  setProfileToSwipe,
+  setMatches,
 } from '../actions/profiles'
 
 const baseUrl = 'https://us-central1-missao-newton.cloudfunctions.net/astroMatch/nadia/'
@@ -17,4 +18,9 @@ export const profileChoice = (id, option) => async (dispatch) => {
   await axios.post(baseUrl + 'choose-person', data)
   dispatch(setProfileToSwipe(null))
   dispatch(getProfileToSwipe())
+}
+
+export const retrievedMatches = () => async(dispatch) => {
+  const response = await axios.get(baseUrl + 'matches')
+  dispatch(setMatches(response.data.matches))
 }

@@ -12,3 +12,12 @@ export const setProfileToSwipe = (profile) => {
     }
   }
 }
+
+export const setMatches = (matches) => {
+  return {
+    type: 'SET_MATCHES',
+    payload: {
+      matches
+    }
+  }
+}

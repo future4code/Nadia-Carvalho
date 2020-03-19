@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {AppBar} from '../../components/AppBar'
 import {mdiAccountSwitch} from '@mdi/js'
 import {updateCurrentPage} from '../../actions/route'
+import {retrievedMatches} from '../../middlewares/thunk'
 import {Avatar, List, ListItem, ListText, MatchIcon} from './styled'
 
 class MatchScreen extends Component {
@@ -44,11 +45,16 @@ MatchScreen.propTypes = {
 	matches: PropTypes.array
 }
 
+
+
+
 const mapStateToProps = state => ({
+  matches: state.profiles.matches,
 })
 
 const mapDispatchToProps = dispatch => ({
-	goToSwipeScreen: () => dispatch(updateCurrentPage('SwipeScreen')),
+  goToSwipeScreen: () => dispatch(updateCurrentPage('SwipeScreen')),
+  getMatches: () => dispatch(retrievedMatches())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MatchScreen)
