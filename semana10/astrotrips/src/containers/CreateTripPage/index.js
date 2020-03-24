@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function index(props) {
+function CreateTripPage(props) {
   return (
     <div>
     
@@ -9,4 +9,4 @@ function index(props) {
   );
 }
 
-export default index;
+export default CreateTripPage;

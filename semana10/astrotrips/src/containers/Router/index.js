@@ -8,11 +8,13 @@ import TripDetailsPage from "../TripDetailsPage";
 import ListTripsPage from "../ListTripsPage";
 import ApplicationForm from "../TripDetailsPage/ApplicationForm";
 
-
-
-
-const routes = {
-  root: "/"
+export const routes = {
+  root: "/",
+  login: "/login",
+  tripsCreate: "/trips/create",
+  tripsList: "/trips/list",
+  tripsDetails: "/trips/details",
+  tripsApplicationForm: "/trips/application-form"
   // Outras rotas aqui
 };
 
@@ -20,12 +22,12 @@ function Router(props) {
   return (
     <ConnectedRouter history={props.history}>
       <Switch>
-        <Route path={"/"} component={HomePage} />
-        <Route path={"/login"} component={LoginPage} />
-        <Route path={"/trips/create"} component={CreateTripPage} />
-        <Route path={"/trips/list"} component={ListTripsPage} />
-        <Route path={"/trips/details"} component={TripDetailsPage} />
-        <Route path={"/application-form"} component={ApplicationForm} />
+        <Route path={routes.root} exact component={HomePage} />
+        <Route path={routes.login} component={LoginPage} />
+        <Route path={routes.tripsCreate} component={CreateTripPage} />
+        <Route path={routes.tripsList} component={ListTripsPage} />
+        <Route path={routes.tripsDetails} component={TripDetailsPage} />
+        <Route path={routes.tripsApplicationForm} component={ApplicationForm} />
       </Switch>
     </ConnectedRouter>
   );

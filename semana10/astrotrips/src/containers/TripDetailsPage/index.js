@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function index(props) {
+function TripDetailsPage(props) {
   return (
     <div>
     Teste
@@ -9,4 +9,4 @@ function index(props) {
   );
 }
 
-export default index;
+export default TripDetailsPage;

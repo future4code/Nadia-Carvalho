@@ -1,12 +1,11 @@
 import React from 'react';
 
-
-function index(props) {
+function HomePage(props) {
   return (
     <div>
-    
+    home
     </div>
   );
 }
 
-export default index;
+export default HomePage;
