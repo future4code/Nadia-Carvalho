@@ -24,7 +24,9 @@ export const App = () => (
   <Provider store={store}>
     <MuiThemeProvider theme={theme}>
       <CssBaseline />
+      <main>
       <Router history={history} />
+      </main>
     </MuiThemeProvider>
   </Provider>
 );
