@@ -9,7 +9,7 @@ export default createMuiTheme({
       main: '#FFFFFF'
     },
     error: {
-      main: '#ff2e63'
+      main: '#FF5F00'
     }, 
     info:{
       main: '#08d9d6'

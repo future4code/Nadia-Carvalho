@@ -10,6 +10,7 @@ import { generateReducers } from "../../reducers";
 import { routerMiddleware } from "connected-react-router";
 import Header from './header';
 import Footer from './footer';
+import Snackbar from "./snackbar";
 
 export const history = createBrowserHistory();
 
@@ -35,6 +36,7 @@ export const App = () => (
       >
       <Header />
       <Container maxWidth="sm">
+        <Snackbar/>
         <Grid
           container
           style={{padding: "20px"}}

@@ -1,8 +1,6 @@
-import { makeStyles } from '@material-ui/core/styles';
-
 const drawerWidth = 240;
 
-export const headerStyles = makeStyles(theme => ({
+export const headerStyles = (theme) => ({
   menuButton: {
     marginRight: theme.spacing(2),
   },
@@ -60,4 +58,4 @@ export const headerStyles = makeStyles(theme => ({
     }),
     marginLeft: 0,
   },
-}));
+});

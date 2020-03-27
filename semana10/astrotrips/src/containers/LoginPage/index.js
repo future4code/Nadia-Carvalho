@@ -4,6 +4,7 @@ import { push } from "connected-react-router";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import styled from "styled-components";
+import { doLogin } from "../../middlewares/auth";
 
 const LoginWrapper = styled.form`
   width: 100%;
@@ -30,7 +31,7 @@ class LoginPage extends Component {
 
   formSubmit = event => {
     event.preventDefault()
-    console.log(this.state)
+    this.props.doLogin(this.state)
   };
 
   render() {
@@ -74,4 +75,12 @@ class LoginPage extends Component {
   }
 }
 
-export default LoginPage;
+const mapStateToProps = (state) => ({
+  // auth: state.auth.user?
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  doLogin: (form) => dispatch(doLogin(form))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage)

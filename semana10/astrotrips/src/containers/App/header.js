@@ -16,139 +16,168 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import FlightTakeoff from '@material-ui/icons/FlightTakeoff'
 import PlayArrow from '@material-ui/icons/PlayArrow'
+import { withStyles } from '@material-ui/styles';
 import { headerStyles } from '../../style/app'
 import { connect } from 'react-redux'
 import { push } from 'connected-react-router';
 import { routes } from '../Router';
+import { doLogout } from '../../middlewares/auth'
+import { Button } from '@material-ui/core';
 
-function Header(props) {
+class Header extends React.Component {
   
-  const classes = headerStyles();
-
-  const [auth, setAuth] = React.useState(true);
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-
-  const [openDrawer, setOpenDrawer] = React.useState(false);
-
-  const handleDrawer = () => {
-    setOpenDrawer(!openDrawer);
-  };
-
-  const handleMenu = event => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const onDrawerClick = (url) => {
-    handleDrawer()
-    props.goTo(url)
+  constructor(props) {
+    super(props)
+    this.state = {
+      anchorEl: null,
+      openMenu: false,
+      openDrawer: false
+    }
   }
 
-  const drawerMenu = [
-    {text: "Home", url: routes.root},
-    {text: "List all trips", url: routes.tripsList},
-    {text: "Create a new trip", url: routes.tripsCreate},
-  ]
+  handleDrawer = () => {
+    this.setState({openDrawer: !this.state.openDrawer})
+  };
 
-  return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton 
-            edge="start" 
-            className={classes.menuButton} 
-            color="inherit" 
-            aria-label="menu"
-            onClick={()=> handleDrawer()}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title} onClick={() => props.goToHome()}>
-            FutureX
-          </Typography>
-          {auth && (
-            <div>
-              <IconButton
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleMenu}
-                color="inherit"
+  handleMenu = (event) => {
+    this.setState({openMenu: !this.state.openMenu, anchorEl: event.currentTarget})
+  };
+
+  onDrawerClick = (url) => {
+    this.handleDrawer()
+    this.props.goTo(url)
+  }
+
+  drawerMenu = () => {
+    const { isLogged } = this.props
+    if (isLogged) {
+      return [
+        {text: "Home", url: routes.root},
+        {text: "Manage trips", url: routes.tripsList},
+        {text: "Create a new trip", url: routes.tripsCreate},
+      ]
+    } 
+    return [
+      {text: "Home", url: routes.root},
+      {text: "List all trips", url: routes.tripsList},
+    ]
+  }
+
+  render() {
+    const { classes } = this.props;
+    return (
+      <div className={classes.root}>
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton 
+              edge="start" 
+              className={classes.menuButton} 
+              color="inherit" 
+              aria-label="menu"
+              onClick={()=> this.handleDrawer()}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography 
+              variant="h6" className={classes.title} 
+              style={{ cursor: "pointer" }}
+              onClick={() => this.props.goToHome()}
+            >
+              FutureX
+            </Typography>
+            {this.props.isLogged && (
+              <div>
+                <IconButton
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  onClick={this.handleMenu}
+                  color="inherit"
+                >
+                  <AccountCircle />
+                </IconButton>
+                <Menu
+                  id="menu-appbar"
+                  anchorEl={this.state.anchorEl}
+                  anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
+                  transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
+                  open={this.state.openMenu}
+                  onClose={this.handleClose}
+                  style={{marginTop: "36px"}}
+                >
+                  <MenuItem onClick={this.handleMenu}>Close</MenuItem>
+                  <Divider/>
+                  <MenuItem onClick={this.props.doLogout}>Logout</MenuItem>
+                </Menu>
+              </div>
+            )}
+            {
+              !this.props.isLogged &&
+              <Button 
+                variant="outlined" color="secondary"
+                onClick={this.props.goToLogin}
               >
-                <AccountCircle />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={open}
-                onClose={handleClose}
-              >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
-              </Menu>
-            </div>
-          )}
-        </Toolbar>
-      </AppBar>
-      <Drawer
-        className={classes.drawer}
-        variant="persistent"
-        anchor="left"
-        open={openDrawer}
-        classes={{
-          paper: classes.drawerPaper,
-        }}
-      >
-        <div className={classes.drawerHeader}>
+                Admin Dashboard
+              </Button>
+            }
+          </Toolbar>
+        </AppBar>
+        <Drawer
+          className={classes.drawer}
+          variant="persistent"
+          anchor="left"
+          open={this.state.openDrawer}
+          classes={{
+            paper: classes.drawerPaper,
+          }}
+        >
+          <div className={classes.drawerHeader}>
+            <List>
+              <ListItem key={1}>
+                <ListItemIcon>
+                  <FlightTakeoff />
+                </ListItemIcon>
+                <ListItemText primary={"Welcome!"} />
+              </ListItem>
+            </List>
+            <IconButton onClick={() => this.handleDrawer()}>
+              <ChevronLeftIcon/>
+            </IconButton>
+          </div>
+          <Divider />
           <List>
-            <ListItem key={1}>
-              <ListItemIcon>
-                <FlightTakeoff />
-              </ListItemIcon>
-              <ListItemText primary={"Bem vindo!"} />
-            </ListItem>
+            {this.drawerMenu().map((item, index) => {
+              const IconDrawer = item.icon || PlayArrow
+              return (
+              <ListItem button key={index} onClick={() => this.onDrawerClick(item.url)}>
+                <ListItemIcon><IconDrawer/></ListItemIcon>
+                <ListItemText primary={item.text} />
+              </ListItem>
+              )
+            })}
           </List>
-          <IconButton onClick={() => handleDrawer()}>
-            <ChevronLeftIcon/>
-          </IconButton>
-        </div>
-        <Divider />
-        <List>
-          {drawerMenu.map((item, index) => {
-            const IconDrawer = item.icon || PlayArrow
-            return (
-            <ListItem button key={index} onClick={() => onDrawerClick(item.url)}>
-              <ListItemIcon><IconDrawer/></ListItemIcon>
-              <ListItemText primary={item.text} />
-            </ListItem>
-            )
-          })}
-        </List>
-      </Drawer>
-    </div>
-  );
+        </Drawer>
+      </div>
+    );
+  }
+  
 }
 
 const mapStateToProps = (state) => ({
-  // auth: state.auth.user?
+  isLogged: state.auth.isLogged
 })
 
 const mapDispatchToProps = (dispatch) => ({
   goToHome: () => dispatch(push(routes.root)),
-  goTo: (url) => dispatch(push(url))
+  goToLogin: () => dispatch(push(routes.login)),
+  goTo: (url) => dispatch(push(url)),
+  doLogout: () => dispatch(doLogout())
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default withStyles(headerStyles)(connect(mapStateToProps, mapDispatchToProps)(Header))
