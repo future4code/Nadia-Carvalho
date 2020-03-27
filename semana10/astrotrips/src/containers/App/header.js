@@ -19,10 +19,10 @@ import PlayArrow from '@material-ui/icons/PlayArrow'
 import { withStyles } from '@material-ui/styles';
 import { headerStyles } from '../../style/app'
 import { connect } from 'react-redux'
-import { push } from 'connected-react-router';
 import { routes } from '../Router';
 import { doLogout } from '../../middlewares/auth'
 import { Button } from '@material-ui/core';
+import { goToLink } from '../../middlewares/interface';
 
 class Header extends React.Component {
   
@@ -56,12 +56,12 @@ class Header extends React.Component {
         {text: "Manage trips", url: routes.tripsList},
         {text: "Create a new trip", url: routes.tripsCreate},
       ]
-    } 
+    }else{
     return [
       {text: "Home", url: routes.root},
       {text: "List all trips", url: routes.tripsList},
     ]
-  }
+  }}
 
   render() {
     const { classes } = this.props;
@@ -113,17 +113,24 @@ class Header extends React.Component {
                 >
                   <MenuItem onClick={this.handleMenu}>Close</MenuItem>
                   <Divider/>
-                  <MenuItem onClick={this.props.doLogout}>Logout</MenuItem>
+                  <MenuItem onClick={(e) => {
+                    this.handleMenu(e)
+                    this.props.doLogout()
+                  }}>
+                    Logout
+                  </MenuItem>
                 </Menu>
               </div>
             )}
             {
               !this.props.isLogged &&
               <Button 
-                variant="outlined" color="secondary"
+                variant="outlined" 
+                color="secondary"
                 onClick={this.props.goToLogin}
+                size="small"
               >
-                Admin Dashboard
+                Admin
               </Button>
             }
           </Toolbar>
@@ -174,9 +181,9 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  goToHome: () => dispatch(push(routes.root)),
-  goToLogin: () => dispatch(push(routes.login)),
-  goTo: (url) => dispatch(push(url)),
+  goToHome: () => dispatch(goToLink(routes.root)),
+  goToLogin: () => dispatch(goToLink(routes.login)),
+  goTo: (url) => dispatch(goToLink(url)),
   doLogout: () => dispatch(doLogout())
 })
 

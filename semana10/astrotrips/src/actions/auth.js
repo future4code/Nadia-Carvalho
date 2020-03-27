@@ -12,19 +12,3 @@ export const authLogout = () => {
     type: 'AUTH_LOGOUT',
   }
 }
-
-export const showSnackBar = (message, type) => {
-  return {
-    type: 'SHOW_SNACKBAR',
-    payload: {
-      message, 
-      type
-    }
-  }
-}
-
-export const closeSnackBar = () => {
-  return {
-    type: 'CLOSE_SNACKBAR'
-  }
-}

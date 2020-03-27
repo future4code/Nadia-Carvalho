@@ -1,31 +1,61 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import FolderIcon from '@material-ui/icons/Folder';
-import RestoreIcon from '@material-ui/icons/Restore';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
+import ListIcon from '@material-ui/icons/Toc';
+import HomeIcon from '@material-ui/icons/Home';
+import LoginIcon from '@material-ui/icons/LockOpen'
+import CreateIcon from '@material-ui/icons/CardTravel';
+import { routes } from '../Router'
+import { goToLink } from '../../middlewares/interface'
+import { connect } from 'react-redux';
 
-const useStyles = makeStyles({
-  root: {
-  },
-});
-
-export default function Footer() {
-  const classes = useStyles();
-  const [value, setValue] = React.useState('recents');
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+function Footer(props) {
+  
+  const handleChange = (event, tab) => {
+    props.changeTab(tab)
   };
 
+  const navigation = () => {
+    const { isLogged } = props
+    if (isLogged) {
+      return [
+        { label: "Manage", url: routes.tripsList, icon: ListIcon },
+        { label: "Home", url: routes.root, icon: HomeIcon },
+        { label: "New Trip", url: routes.tripsCreate, icon: CreateIcon }
+      ]
+    } else {
+      return [
+        { label: "Trips", url: routes.tripsList, icon: ListIcon },
+        { label: "Home", url: routes.root, icon: HomeIcon },
+        { label: "Login", url: routes.login, icon: LoginIcon }
+      ]
+    }
+  }
+
   return (
-    <BottomNavigation value={value} onChange={handleChange} className={classes.root}>
-      <BottomNavigationAction label="Recents" value="recents" icon={<RestoreIcon />} />
-      <BottomNavigationAction label="Favorites" value="favorites" icon={<FavoriteIcon />} />
-      <BottomNavigationAction label="Nearby" value="nearby" icon={<LocationOnIcon />} />
-      <BottomNavigationAction label="Folder" value="folder" icon={<FolderIcon />} />
+    <BottomNavigation value={props.currentTab} onChange={handleChange}>
+      {navigation().map( (item, index) => {
+        const Icon = item.icon
+        return (
+          <BottomNavigationAction 
+            key={index}
+            label={item.label} 
+            value={item.url} 
+            icon={<Icon />} 
+          />
+        )
+      })}
     </BottomNavigation>
   );
 }
+
+const mapStateToProps = (state) => ({
+  currentTab: state.ui.currentTab,
+  isLogged: state.auth.isLogged
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  changeTab: (tab) => dispatch(goToLink(tab))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Footer)

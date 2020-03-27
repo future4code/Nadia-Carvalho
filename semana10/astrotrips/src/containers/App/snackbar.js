@@ -2,7 +2,7 @@ import React from 'react';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 
-import { doCloseSnackBar } from '../../middlewares/auth'
+import { doCloseSnackBar } from '../../middlewares/interface'
 import { connect } from 'react-redux';
 
 function Alert(props) {
@@ -27,9 +27,9 @@ function SnackBar(props) {
 }
 
 const mapStateToProps = (state) => ({
-  open: state.auth.snackbar.open,
-  severity: state.auth.snackbar.type,
-  message: state.auth.snackbar.message,
+  open: state.ui.snackbar.open,
+  severity: state.ui.snackbar.type,
+  message: state.ui.snackbar.message,
 })
 
 const mapDispatchToProps = (dispatch) => ({

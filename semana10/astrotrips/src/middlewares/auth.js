@@ -1,14 +1,16 @@
 import axios from 'axios'
-import {authLogin, authLogout, showSnackBar, closeSnackBar} from '../actions/auth'
-import { push } from 'connected-react-router'
+import { authLogin, authLogout } from '../actions/auth'
+import { doShowSnackBar, goToLink } from './interface'
 import { routes } from '../containers/Router'
 
 const baseURL = 'https://us-central1-missao-newton.cloudfunctions.net/futureX/nadia'
 
 export const doLogin = (form) => async (dispatch) => {
+  console.log(form)
   try {
     const response = await axios.post(`${baseURL}/login`, form)
     dispatch(authLogin(response.data.token))  
+    dispatch(goToLink(routes.root))
   } catch(e) {
     console.log(e)
     dispatch(doShowSnackBar('Invalid credentials!', 'error'))
@@ -17,13 +19,5 @@ export const doLogin = (form) => async (dispatch) => {
 
 export const doLogout = () => (dispatch) => {
   dispatch(authLogout())
-  dispatch(push(routes.root))
-}
-
-export const doShowSnackBar = (message, type = 'info') => (dispatch) => {
-  dispatch(showSnackBar(message, type))
-}
-
-export const doCloseSnackBar = () => dispatch => {
-  dispatch(closeSnackBar())
+  dispatch(goToLink(routes.root))
 }
