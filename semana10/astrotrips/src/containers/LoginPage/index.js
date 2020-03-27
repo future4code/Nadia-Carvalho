@@ -7,7 +7,6 @@ import styled from "styled-components";
 
 const LoginWrapper = styled.form`
   width: 100%;
-  height: 100vh;
   gap: 10px;
   place-content: center;
   justify-items: center;
@@ -29,16 +28,25 @@ class LoginPage extends Component {
     });
   };
 
+  formSubmit = event => {
+    event.preventDefault()
+    console.log(this.state)
+  };
+
   render() {
     const { email, password } = this.state;
 
     return (
-      <LoginWrapper>
+      <LoginWrapper onSubmit={this.formSubmit}>
         <TextField
           onChange={this.handleFieldChange}
           name="email"
           type="email"
           label="E-mail"
+          required
+          inputProps={{
+            title: "Provide a valid email"
+          }}
           value={email}
         />
         <TextField
@@ -46,9 +54,21 @@ class LoginPage extends Component {
           name="password"
           type="password"
           label="Password"
+          required
+          inputProps={{
+            pattern: ".{6,}",
+            title: "At least 6 digits passwords"
+          }}
           value={password}
         />
-        <Button>Login</Button>
+        <Button 
+          variant="contained" 
+          color="primary"
+          style={{margin: "15px"}}
+          type="submit"
+        >
+          Login
+        </Button>
       </LoginWrapper>
     );
   }

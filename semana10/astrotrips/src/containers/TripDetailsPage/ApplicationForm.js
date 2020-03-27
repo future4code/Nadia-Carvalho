@@ -107,7 +107,7 @@ export default class ApplicationForm extends React.Component {
   
   render() {
     return (
-      <Paper style={{ padding: 16 }}>
+      <Paper style={{ padding: "16px" }}>
         <Typography
           style={{ marginBottom: "15px" }}
           variant="h5"
