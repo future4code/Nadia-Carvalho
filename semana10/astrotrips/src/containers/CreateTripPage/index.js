@@ -48,4 +48,18 @@ export default class NewTripForm extends React.Component {
       form: {}
     };
   }
+  render() {
+    return (
+      <div>
+        <form>
+          {tripForm.map(item => {
+            return(
+              <input placeholder={item.name}/>
+              
+            )
+          })}
+        </form>
+      </div>
+    )
+  }
 }

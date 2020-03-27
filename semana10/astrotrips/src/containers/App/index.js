@@ -1,7 +1,7 @@
 import React from "react";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
-import { MuiThemeProvider, CssBaseline } from "@material-ui/core";
+import { MuiThemeProvider, CssBaseline, Container, Grid } from "@material-ui/core";
 import theme from "../../style/theme";
 import Router from "../Router";
 import { createBrowserHistory } from "history";
@@ -24,9 +24,17 @@ export const App = () => (
   <Provider store={store}>
     <MuiThemeProvider theme={theme}>
       <CssBaseline />
-      <main>
-      <Router history={history} />
-      </main>
+      <Container maxWidth="sm">
+        <Grid
+          container
+          style={{padding: "20px"}}
+          alignItems="center"
+          justify="center"
+          direction="column"
+        >
+          <Router history={history} />
+        </Grid>
+      </Container>
     </MuiThemeProvider>
   </Provider>
 );
