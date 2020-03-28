@@ -3,7 +3,7 @@ const authStorage = window.localStorage.getItem(authKey)
 
 const initialState = {
   user: authStorage,
-  isLogged: Boolean(authStorage) | true,
+  isLogged: Boolean(authStorage),
 }
 
 const auth = (state = initialState, action) => {

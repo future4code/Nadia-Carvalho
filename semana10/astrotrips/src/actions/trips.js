@@ -1,3 +1,12 @@
+export const tripDetail = (trip) => {
+  return {
+    type : 'TRIP_DETAIL',
+    payload: {
+      trip
+    }
+  }
+}
+
 export const setTrips = (trips) => {
   return {
     type: 'SET_TRIPS',
@@ -6,11 +15,32 @@ export const setTrips = (trips) => {
     }
   }
 }
-export const saveTripApplication = (application) => {
+
+export const saveTrip = (trip) => {
+  return {
+    type: 'SAVE_TRIP',
+    payload: {
+      trip
+    }
+  }
+}
+
+export const saveApplication = (tripId, candidate) => {
   return {
     type: 'SAVE_APPLICATION',
     payload: {
-      application
+      tripId,
+      candidate
+    }
+  }
+}
+
+export const decideCandidate = (tripId, candidate) => {
+  return {
+    type: 'DECIDE_CANDIDATE',
+    payload: {
+      tripId,
+      candidate
     }
   }
 }
