@@ -6,7 +6,6 @@ import { routes } from '../containers/Router'
 const baseURL = 'https://us-central1-missao-newton.cloudfunctions.net/futureX/nadia'
 
 export const doLogin = (form) => async (dispatch) => {
-  console.log(form)
   try {
     const response = await axios.post(`${baseURL}/login`, form)
     dispatch(authLogin(response.data.token))  

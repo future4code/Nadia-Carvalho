@@ -41,6 +41,7 @@ export const App = () => (
           container
           style={{padding: "20px"}}
           alignItems="center"
+          alignContent="center"
           justify="center"
           direction="column"
         >

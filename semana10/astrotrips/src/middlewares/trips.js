@@ -7,12 +7,12 @@ import { routes } from '../containers/Router'
 
 const baseURL = 'https://us-central1-missao-newton.cloudfunctions.net/futureX/nadia'
 
-export const getTrips = (token) => async (dispatch) => {
-  const response = await axios.get(`${baseURL}/trips`, { headers: { auth: token } })
+export const getTrips = () => async (dispatch) => {
+  const response = await axios.get(`${baseURL}/trips`)
   dispatch(setTrips(response.data.trips))
 }
 
-export const createTrip = (trip) => async (dispatch) => {
+export const createTrip = (token, trip) => async (dispatch) => {
   const response = await axios.post(`${baseURL}/trips`, trip, { headers: { auth: token } })
   dispatch(saveTrip(response.data.trip))
   dispatch(doShowSnackBar('Trip created', 'success'))
@@ -46,4 +46,9 @@ export const applyToTrip = (tripId, candidate) => async (dispatch) => {
   } else {
     dispatch(doShowSnackBar('Failed to apply', 'error'))
   }
+}
+
+export const goDetailTrip = (trip) => (dispatch) => {
+  dispatch(tripDetail(trip))
+  dispatch(goToLink(routes.tripsDetails))
 }
