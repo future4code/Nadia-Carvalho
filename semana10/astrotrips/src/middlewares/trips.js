@@ -15,9 +15,13 @@ export const getTrips = () => async (dispatch) => {
 
 export const createTrip = (token, trip) => async (dispatch) => {
   const response = await axios.post(`${baseURL}/trips`, trip, { headers: { auth: token } })
-  dispatch(saveTrip(response.data.trip))
-  dispatch(doShowSnackBar('Trip created', 'success'))
-  dispatch(goToLink(routes.tripsList))
+  if (response.data.trip) {
+    dispatch(saveTrip(response.data.trip))
+    dispatch(doShowSnackBar('Trip created', 'success'))
+    dispatch(goToLink(routes.tripsList))
+  } else {
+    dispatch(doShowSnackBar('Failed to create', 'error'))
+  }
 }
 
 export const getTripDetail = (token, tripId) => async (dispatch) => {
