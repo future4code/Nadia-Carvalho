@@ -16,6 +16,14 @@ const trips = (state = initialState, action) => {
       if (!trip.candidates) {
         trip.candidates = []
       }
+      let applications = []
+      if (trip.approved) {
+        trip.approved.forEach(a => {
+          a.approve = true
+          applications.push(a) 
+        })
+      }
+      trip.applications = [...applications, ...trip.candidates]
       trip.alreadyApplied = state.applications.some(a => a === trip.id)
       return { ...state, currentTrip: trip }
     case 'DECIDE_CANDIDATE': {

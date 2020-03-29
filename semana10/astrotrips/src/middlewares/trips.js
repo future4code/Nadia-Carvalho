@@ -25,14 +25,15 @@ export const getTripDetail = (token, tripId) => async (dispatch) => {
   dispatch(tripDetail(response.data.trip))
 }
 
-export const doDecideCandidate = (token, tripId, candidate) => async (dispatch) => {
-  const url = `${baseURL}/trips/${tripId}/candidates/${candidate.id}/decide`
+export const doDecideCandidate = (token, trip, candidate) => async (dispatch) => {
+  const url = `${baseURL}/trips/${trip.id}/candidates/${candidate.id}/decide`
   const decide = { approve: candidate.approve }
   const response = await axios.put(url, decide, { headers: { auth: token } })
   if (response.data.success) {
-    dispatch(decideCandidate(tripId, candidate))
-    dispatch(doShowSnackBar('Application decided', 'success'))
-    dispatch(goToLink(routes.tripsDetails))
+    const decided = candidate.approve ? 'success' : 'warning'
+    dispatch(decideCandidate(trip.id, candidate))
+    dispatch(doShowSnackBar(response.data.message, decided))
+    dispatch(goApplicationsTrip(token, trip))
   } else {
     dispatch(doShowSnackBar('Failed to decide', 'error'))
   }
