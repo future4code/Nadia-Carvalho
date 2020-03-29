@@ -5,6 +5,8 @@ import Button from "@material-ui/core/Button";
 import styled from "styled-components";
 import { doLogin } from "../../middlewares/auth";
 import { Typography, Paper } from "@material-ui/core";
+import { routes } from "../Router";
+import { goToLink } from "../../middlewares/interface";
 
 const LoginWrapper = styled.form`
   margin-top: 12px;
@@ -23,6 +25,11 @@ class LoginPage extends Component {
       password: ""
     };
   }
+  componentWillMount(){
+    if(this.props.auth){
+      this.props.goTo(routes.root)
+    }
+  }
 
   handleFieldChange = event => {
     this.setState({
@@ -39,9 +46,9 @@ class LoginPage extends Component {
     const { email, password } = this.state;
 
     return (
-      <Paper style={{padding: "20px"}}>
+      <Paper style={{ padding: "20px" }}>
         <Typography variant="h5">FutureX Staff?</Typography>
-        <Typography variant="caption">Enter into the future</Typography>
+        <Typography variant="caption"> Enter into the future</Typography>
         <LoginWrapper onSubmit={this.formSubmit}>
           <TextField
             onChange={this.handleFieldChange}
@@ -66,10 +73,10 @@ class LoginPage extends Component {
             }}
             value={password}
           />
-          <Button 
-            variant="contained" 
+          <Button
+            variant="contained"
             color="primary"
-            style={{margin: "15px"}}
+            style={{ margin: "15px" }}
             type="submit"
           >
             Login
@@ -81,11 +88,12 @@ class LoginPage extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  // auth: state.auth.user?
+  auth: state.auth.user
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  doLogin: (form) => dispatch(doLogin(form))
+  doLogin: (form) => dispatch(doLogin(form)),
+  goTo: (url) => dispatch(goToLink(url)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginPage)

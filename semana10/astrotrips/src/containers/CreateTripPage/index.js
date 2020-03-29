@@ -29,7 +29,7 @@ const tripForm = [
     label: "Destination",
     type: "select",
     required: true,
-    title: "Please select the destination",
+    title: "Please select the destination.",
     materialProps: {
       select: true,
       InputLabelProps: { shrink: true }
@@ -46,7 +46,7 @@ const tripForm = [
     type: "number",
     required: true,
     min: 50,
-    title: "Please inform the trip's duration"
+    title: "Please inform the trip's duration."
   },
   {
     name: "date",
@@ -54,7 +54,7 @@ const tripForm = [
     type: "date",
     required: true,
     min: Date.now(),
-    title: "Please select a date for the trip",
+    title: "Please select a date for the trip.",
     materialProps: {
       InputLabelProps: { shrink: true }
     },

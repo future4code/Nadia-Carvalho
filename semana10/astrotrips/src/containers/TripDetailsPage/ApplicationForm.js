@@ -30,7 +30,7 @@ const appForm = [
     type: "number",
     required: true,
     min: 18,
-    title: "Age (in years)",
+    title: "Age (in years).",
   },
   {
     name: "applicationText",
@@ -38,7 +38,7 @@ const appForm = [
     type: "text",
     required: true,
     pattern: ".{30,}",
-    title: "Why would you be a good candidate for this trip?.",
+    title: "Why would you be a good candidate for this trip?",
     materialProps: {
       multiline: true,
       rowsMax: "8"
@@ -50,14 +50,14 @@ const appForm = [
     type: "text",
     required: true,
     pattern: ".{10,}",
-    title: "At least 10 letters long"
+    title: "At least 10 letters long."
   },
   {
     name: "country",
     label: "User's country",
     type: "select",
     required: true,
-    title: "Select your country",
+    title: "Select your country.",
     materialProps: {
       select: true,
       InputLabelProps: { shrink: true }
@@ -68,14 +68,6 @@ const appForm = [
       </MenuItem>
     ))
   },
-  // {
-  //   name: "trip",
-  //   label: "Selected trip",
-  //   type: "select",
-  //   required: true,
-  //   title: "Select your trip"
-  // },
-
 ]
 
 class ApplicationForm extends React.Component {

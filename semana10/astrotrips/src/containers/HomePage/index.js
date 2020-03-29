@@ -21,7 +21,7 @@ const Wrapper = styled.div`
 `
 
 function HomePage(props) {
-  const buttonTrips = props.isLogged ? 'Manage trips' : 'Trips Available'
+  const buttonTrips = props.isLogged ? 'Manage trips' : 'Trips Avaliable'
   return (
     <Wrapper>
       <FutureX src={PictureSmall} />
