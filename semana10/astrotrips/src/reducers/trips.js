@@ -41,6 +41,7 @@ const trips = (state = initialState, action) => {
           currentTrip.candidates = []
         }
         currentTrip.candidates = [ ...currentTrip.candidates , candidate ]
+        currentTrip.alreadyApplied = true
         const applications = [...state.applications, tripId ]
         return { ...state, currentTrip, applications }
       } else {

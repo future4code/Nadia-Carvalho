@@ -37,7 +37,7 @@ class TripDetailsPage extends React.Component {
   }
 
   render() {
-    const { trip, goToApplication, classes } = this.props
+    const { trip, isAdmin, goToApplication, classes } = this.props
     let tripImage = Planets
     return (
       <Card className={classes.root}>
@@ -79,8 +79,12 @@ class TripDetailsPage extends React.Component {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary" onClick={() => goToApplication()}>
-            Apply to this trip!
+          <Button 
+            size="small" variant="contained" color="primary" 
+            onClick={() => goToApplication(isAdmin)}
+            disabled={!isAdmin && trip.alreadyApplied}
+          >
+            {isAdmin ? "Manage applications" : "Apply to this trip!"}
           </Button>
         </CardActions>
       </Card>
@@ -89,11 +93,12 @@ class TripDetailsPage extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  trip: state.trips.currentTrip
+  trip: state.trips.currentTrip,
+  isAdmin: state.auth.isLogged
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  goToApplication: () => dispatch(goToLink(routes.tripsApplicationForm)),
+  goToApplication: (isAdmin) => dispatch(goToLink(isAdmin ? routes.tripsApplicationList : routes.tripsApplicationForm)),
   goToList: () => dispatch(goToLink(routes.tripsList))
 })
 

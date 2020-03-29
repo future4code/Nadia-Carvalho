@@ -1,4 +1,7 @@
 import React from 'react';
+import { routes } from '../Router';
+import { connect } from 'react-redux';
+import { goToLink } from '../../middlewares/interface';
 
 const tripForm = [
   {
@@ -40,14 +43,20 @@ const tripForm = [
   }
 ]
 
-
-export default class NewTripForm extends React.Component {
+class NewTripForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       form: {}
     };
   }
+
+  componentWillMount() {
+    if (!this.props.isAdmin) {
+      this.props.goToHome()
+    }
+  }
+
   render() {
     return (
       <div>
@@ -55,11 +64,21 @@ export default class NewTripForm extends React.Component {
           {tripForm.map(item => {
             return(
               <input placeholder={item.name}/>
-              
             )
           })}
         </form>
       </div>
     )
   }
+
 }
+
+const mapStateToProps = (state) => ({
+  isAdmin: state.auth.isLogged
+})
+
+const mapDispatchToPros = (dispatch) => ({
+  goToHome: () => dispatch(goToLink(routes.root))
+})
+
+export default connect(mapStateToProps, mapDispatchToPros)(NewTripForm)

@@ -39,7 +39,7 @@ export const App = () => (
         <Snackbar/>
         <Grid
           container
-          style={{padding: "20px"}}
+          style={{padding: "20px 5px"}}
           alignItems="center"
           alignContent="center"
           justify="center"

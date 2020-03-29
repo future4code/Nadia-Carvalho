@@ -9,6 +9,7 @@ const baseURL = 'https://us-central1-missao-newton.cloudfunctions.net/futureX/na
 
 export const getTrips = () => async (dispatch) => {
   const response = await axios.get(`${baseURL}/trips`)
+  dispatch(tripDetail({}))
   dispatch(setTrips(response.data.trips))
 }
 
@@ -42,13 +43,22 @@ export const applyToTrip = (tripId, candidate) => async (dispatch) => {
   if (response.data.success) {
     dispatch(saveApplication(tripId, candidate))
     dispatch(doShowSnackBar(response.data.message, 'success'))
-    dispatch(goToLink(routes.tripsList))
+    dispatch(goToLink(routes.tripsDetails))
   } else {
     dispatch(doShowSnackBar('Failed to apply', 'error'))
   }
 }
 
-export const goDetailTrip = (trip) => (dispatch) => {
-  dispatch(tripDetail(trip))
+export const goDetailTrip = (token, trip) => async (dispatch) => {
+  if (token) {
+    await dispatch(getTripDetail(token, trip.id))
+  } else {
+    dispatch(tripDetail(trip))
+  }
   dispatch(goToLink(routes.tripsDetails))
+}
+
+export const goApplicationsTrip = (token, trip) => async (dispatch) => {
+  await dispatch(getTripDetail(token, trip.id))
+  dispatch(goToLink(routes.tripsApplicationList))
 }

@@ -7,6 +7,7 @@ import HomePage from "../HomePage";
 import TripDetailsPage from "../TripDetailsPage";
 import ListTripsPage from "../ListTripsPage";
 import ApplicationForm from "../TripDetailsPage/ApplicationForm";
+import ApplicationList from "../TripDetailsPage/ApplicationList";
 
 export const routes = {
   root: "/",
@@ -14,7 +15,8 @@ export const routes = {
   tripsCreate: "/trips/create",
   tripsList: "/trips/list",
   tripsDetails: "/trips/details",
-  tripsApplicationForm: "/trips/application-form"
+  tripsApplicationForm: "/trips/application-form",
+  tripsApplicationList: "/trips/application-list",
   // Outras rotas aqui
 };
 
@@ -28,6 +30,7 @@ function Router(props) {
         <Route path={routes.tripsList} component={ListTripsPage} />
         <Route path={routes.tripsDetails} component={TripDetailsPage} />
         <Route path={routes.tripsApplicationForm} component={ApplicationForm} />
+        <Route path={routes.tripsApplicationList} component={ApplicationList} />
       </Switch>
     </ConnectedRouter>
   );

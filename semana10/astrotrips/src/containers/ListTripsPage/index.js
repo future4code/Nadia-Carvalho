@@ -1,6 +1,5 @@
 import React from 'react';
-import Paper from '@material-ui/core/Paper'
-import { Typography, GridList, GridListTile, CircularProgress, Grid } from '@material-ui/core';
+import { Typography, GridList, GridListTile, CircularProgress, Grid, Divider, Box } from '@material-ui/core';
 import CardTrip from './card';
 import { connect } from 'react-redux';
 import { getTrips } from '../../middlewares/trips';
@@ -12,9 +11,9 @@ class ListTripsPage extends React.Component {
   }
 
   render() {
-    const { tripList } = this.props
+    const { tripList, isAdmin } = this.props
     return (
-      <Paper style={{padding: "10px"}}>
+      <Box style={{padding: "10px"}}>
         <Grid container
           direction="column"
           alignContent="center"
@@ -24,26 +23,28 @@ class ListTripsPage extends React.Component {
           <Typography gutterBottom variant="h4">Current trips</Typography>
           {tripList && 
           <GridList
-            cellHeight={240}
-            spacing={10}
+            cellHeight={"auto"}
+            spacing={20}
             cols={1}
           >
             {tripList.map(trip => (
               <GridListTile key={trip.id}>
-                <CardTrip trip={trip}/>
+                <CardTrip trip={trip} isAdmin={isAdmin}/>
+                <Divider/>
               </GridListTile>
             ))}
           </GridList>}
           {!tripList.length && <CircularProgress/>}
         </Grid>
-      </Paper>
+      </Box>
     );
   }
   
 }
 
 const mapStateToProps = (state) => ({
-  tripList: state.trips.trips
+  tripList: state.trips.trips,
+  isAdmin: state.auth.isLogged
 })
 
 const mapDispatchToProps = (dispatch) => ({
