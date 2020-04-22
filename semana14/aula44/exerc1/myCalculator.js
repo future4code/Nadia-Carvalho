@@ -23,13 +23,10 @@ function myCalculator(operation, num1, num2) {
   switch (operation) {
       case 'add':
           return add(num1, num2);
-
       case 'sub':
           return sub(num1, num2);
-
       case 'mul' :
           return mul(num1, num2);
-
       case 'div':
           return div(num1, num2);
   }
