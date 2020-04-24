@@ -9,16 +9,49 @@
 enum Eras {
   PREHISTORY = 'Pré-História',
   ANCIENT = 'Idade Antiga',
-  MIDDLE ='Idade Média',
+  MIDDLE = 'Idade Média',
   MODERN = 'Idade Moderna',
   CONTEMPORARY = 'Idade Contemporânea'
 }
 enum Ages {
-AC = 'AC',
-DC = 'DC'
+  AC = 'AC',
+  DC = 'DC'
 }
 
-function checking(year: number, age?: string): string {
-
-  return
+function ValidateAC(year: number): string {
+  if (year > 4000) {
+    return Eras.PREHISTORY;
+  } else {
+    return Eras.ANCIENT;
+  }
 }
+
+function ValidateDC(year: number): string {
+  if (year < 476) {
+    return Eras.MIDDLE;
+  } else if (year < 1453) {
+    return Eras.MODERN;
+  } else {
+    return Eras.CONTEMPORARY;
+  }
+}
+
+function checkingAge(year: number, age?: string): string {
+  if (!age) {
+    age = Ages.DC;
+  }
+  if (year > 0) {
+    switch (age) {
+      case Ages.AC:
+        return ValidateAC(year);
+      case Ages.DC:
+        return ValidateDC(year);
+      default:
+        return ("Era inválida!")
+    }
+  } else {
+    return ("Ano inválido!")
+  }
+}
+
+console.log(checkingAge(1987))
