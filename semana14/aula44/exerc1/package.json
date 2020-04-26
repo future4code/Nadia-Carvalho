@@ -1,0 +1,12 @@
+{
+  "name": "exerc1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "myCalculator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node myCalculator.js"
+  },
+  "author": "Nadia",
+  "license": "ISC"
+}
