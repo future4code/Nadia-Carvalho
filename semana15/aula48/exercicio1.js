@@ -17,7 +17,11 @@ var User = /** @class */ (function () {
     User.prototype.getName = function () {
         return this.name;
     };
+    User.prototype.introduceYourself = function () {
+        return 'Olá, bom dia! =)';
+    };
     return User;
 }());
-//const NovoUsuario = new User('Nadia','nadia@labenu.com.br', 'Nadia Carvalho', 'esqueciasenha');
+var NovoUsuario = new User('Nadia', 'nadia@labenu.com.br', 'Nadia Carvalho', 'esqueciasenha');
+console.log(NovoUsuario.introduceYourself());
 exports["default"] = User;

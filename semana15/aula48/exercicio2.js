@@ -29,3 +29,4 @@ var Customer = /** @class */ (function (_super) {
     return Customer;
 }(exercicio1_1["default"]));
 var NovoCliente = new Customer('stringdeID', 'cliente@ServiceWorker.com', 'Nadia', 'esqueciasenha2', '4332445677688998');
+console.log(NovoCliente.introduceYourself());

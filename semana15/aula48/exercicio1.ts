@@ -8,13 +8,14 @@ class User {
 		id: string,
 		email: string,
 		name: string,
-		password: string
+    password: string,
 	){
 		console.log("Chamando o construtor da classe User")
 		this.id = id
 		this.email = email
 		this.name = name 
-		this.password = password
+    this.password = password
+
 	}
 
 	public getId(): string {
@@ -27,8 +28,15 @@ class User {
 
 	public getName(): string {
 		return this.name
-	}
+  }
+  
+  public introduceYourself(): string {
+    return 'Olá, bom dia! =)'
+  }
 }
 
 const NovoUsuario = new User('Nadia','nadia@labenu.com.br', 'Nadia Carvalho', 'esqueciasenha');
+console.log(NovoUsuario.introduceYourself())
+
+
 export default User;

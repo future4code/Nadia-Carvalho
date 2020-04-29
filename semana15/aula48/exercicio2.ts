@@ -9,7 +9,7 @@ class Customer extends User {
     email: string,
     name: string,
     password: string,
-    creditCard: string
+    creditCard: string,
   ) {
     super(id, email, name, password);
     console.log("Chamando o construtor da classe Customer");
@@ -23,4 +23,4 @@ class Customer extends User {
 
 const NovoCliente = new Customer('stringdeID', 'cliente@ServiceWorker.com','Nadia','esqueciasenha2', '4332445677688998');
 
-console.log(NovoCliente)
+console.log(NovoCliente.introduceYourself());
