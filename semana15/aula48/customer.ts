@@ -1,4 +1,4 @@
-import User from "./exercicio1";
+import User from "./user";
 
 class Customer extends User {
   public purchaseTotal: number = 0;
