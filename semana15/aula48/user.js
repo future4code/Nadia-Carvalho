@@ -19,7 +19,7 @@ var User = /** @class */ (function () {
         return this.name;
     };
     User.prototype.introduceYourself = function () {
-        return "Ol\u00E1, meu nome \u00E9 " + this.name + ". Bom dia! =)";
+        return "Ol\u00E1, meu nome \u00E9 " + this.name + ". Bom dia! =)"; /*Linha modificada - Exercício 5:*/
     }; /*Exercício 4:*/
     return User;
 }());
