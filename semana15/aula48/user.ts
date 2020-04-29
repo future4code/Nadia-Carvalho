@@ -1,3 +1,4 @@
+/*Exercício 1:*/
 class User {
   private id: string;
   private email: string;
@@ -30,13 +31,13 @@ class User {
 		return this.name
   }
   
-  // public introduceYourself(): string {
-  //   return 'Olá, bom dia! =)'
-  // }
+  public introduceYourself(): string {
+    return 'Olá, bom dia! =)'
+  } /*Exercício 4:*/
 }
 
-const NovoUsuario = new User('Nadia','nadia@labenu.com.br', 'Nadia Carvalho', 'esqueciasenha');
-// Exercício 4: console.log(NovoUsuario.introduceYourself())
+/*Exercício 1:*/ const NovoUsuario = new User('Nadia','nadia@labenu.com.br', 'Nadia Carvalho', 'esqueciasenha');
+/*Exercício 4:*/ console.log(NovoUsuario.introduceYourself())
 
 
 export default User;
