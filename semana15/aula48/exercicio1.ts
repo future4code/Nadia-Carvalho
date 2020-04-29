@@ -30,13 +30,13 @@ class User {
 		return this.name
   }
   
-  public introduceYourself(): string {
-    return 'Olá, bom dia! =)'
-  }
+  // public introduceYourself(): string {
+  //   return 'Olá, bom dia! =)'
+  // }
 }
 
 const NovoUsuario = new User('Nadia','nadia@labenu.com.br', 'Nadia Carvalho', 'esqueciasenha');
-console.log(NovoUsuario.introduceYourself())
+// Exercício 4: console.log(NovoUsuario.introduceYourself())
 
 
 export default User;

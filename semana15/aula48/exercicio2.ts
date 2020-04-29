@@ -23,4 +23,4 @@ class Customer extends User {
 
 const NovoCliente = new Customer('stringdeID', 'cliente@ServiceWorker.com','Nadia','esqueciasenha2', '4332445677688998');
 
-console.log(NovoCliente.introduceYourself());
+// Exercício 4: console.log(NovoCliente.introduceYourself());
