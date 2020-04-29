@@ -32,7 +32,7 @@ class User {
   }
   
   public introduceYourself(): string {
-    return 'Olá, bom dia! =)'
+    return `Olá, meu nome é ${this.name}. Bom dia! =)`  /*Linha modificada - Exercício 5:*/
   } /*Exercício 4:*/
 }
 
