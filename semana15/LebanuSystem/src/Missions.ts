@@ -1,15 +1,16 @@
 import moment from "moment"
 import { Student } from "./Student"
 import { Teacher } from "./Teachers"
+import { start } from "repl";
 
-enum MODULES {
-ONE = 1,
-TWO = 2,
-THREE = 3,
-FOUR = 4,
-FIVE = 5,
-SIX = 6,
-SEVEN = 7,
+export enum MODULES {
+  ONE = 1,
+  TWO = 2,
+  THREE = 3,
+  FOUR = 4,
+  FIVE = 5,
+  SIX = 6,
+  SEVEN = 7,
 }
 
 export abstract class Mission {
@@ -21,14 +22,14 @@ export abstract class Mission {
     private endDate: moment.Moment,
     private teachers: Teacher[] = [],
     private students: Student[] = [],
-    private currentModule: number = undefined
-  ) 
-  {}
+    private currentModule: number = undefined,
+    private nightClass: boolean = false,
+  ) { }
 
   public getId(): string {
     return this.id;
   }
-  public getName(name: string): string {
+  public getName(): string {
     return this.name;
   }
   public getStartDate(): moment.Moment {
@@ -49,8 +50,46 @@ export abstract class Mission {
   public setName(name: string) {
     this.name = name;
   }
+  public isNightClass(): boolean {
+    return this.nightClass;
+  }
+  public getAgeById(id: string): number {
+    return this.students.find(student => student.id === id).getAge();
+  }
 }
 
-export class NewMission extends Mission {}
+export class FullTimeMission extends Mission {
+  constructor(
+    id: string,
+    startDate: moment.Moment,
+    endDate: moment.Moment,
+    teachers: Teacher[] = [],
+    students: Student[] = [],
+    currentModule: number = undefined,
+  ) {
+    super(id, startDate, endDate, teachers, students, currentModule, false)
+  }
+  public setName(name: string) {
+    name = name.replace("-na-night", "")
+    super.setName(name);
+  }
+}
 
- export const avengersMission = new NewMission("Avg01", moment("2020-04-30"), moment("2020-10-30"), [], [], MODULES.FOUR)
+export class NightMission extends Mission {
+  constructor(
+    id: string,
+    startDate: moment.Moment,
+    endDate: moment.Moment,
+    teachers: Teacher[] = [],
+    students: Student[] = [],
+    currentModule: number = undefined,
+  ) {
+    super(id, startDate, endDate, teachers, students, currentModule, true)
+  }
+  public setName(name: string) {
+    if (name.indexOf("-na-night") === -1) {
+      name = name + "-na-night"
+    }
+    super.setName(name);
+  }
+}
