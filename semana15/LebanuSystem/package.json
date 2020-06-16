@@ -1,0 +1,19 @@
+{
+  "name": "lebanusystem",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@types/moment": "^2.13.0",
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.13.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node build/index.js"
+  },
+  "author": "Nadia Carvalho",
+  "license": "ISC"
+}
